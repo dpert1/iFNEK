@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>iFNEK: Interactive Fundamental Nuclear Engineering Knowledge</title>
+    <style>
+        /* Page styling */
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 100%;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Container styling */
+        #rdcContainer {
+            display: flex;
+            justify-content: center;
+            max-width: 100%;
+            overflow-x: auto;
+        }
+
+        /* Popup styling */
+        #equationPopup {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            z-index: 1000;
+            min-width: 300px;
+            max-width: 600px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        #latexContent {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        #latexContent .equation {
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #f8f9fa;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+
+        #latexContent h1 {
+            font-size: 1.2em;
+            margin: 0 0 15px 0;
+        }
+
+        #latexContent h2 {
+            font-size: 1.1em;
+            margin: 15px 0 8px 0;
+        }
+
+        #latexContent ul {
+            margin: 8px 0;
+            padding-left: 25px;
+        }
+
+        #latexContent li {
+            margin: 4px 0;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #e74c3c;
+            transition: color 0.3s ease;
+            padding: 5px;
+        }
+
+        .close-btn:hover {
+            color: #c0392b;
+        }
+
+        .warning {
+            color: #e74c3c;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+    <!-- MathJax for rendering LaTeX -->
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+    <h1>iFNEK: Interactive Fundamental Nuclear Engineering Knowledge</h1>
+    <h3 class="warning">YOU WILL NOT HAVE THIS VERSION OF THE FNEK ON ANY EXAM</h3>
+
+    <!-- Container for the SVG -->
+    <div id="rdcContainer"></div>
+    <p>
+        The iFNEK was created thanks to MAJ Filip's inspiration with the PH2X1 iPRC (thanks Kevin).<br>
+        To suggest additional improvements email: <a href="mailto:dave.pert@westpoint.edu">dave.pert@westpoint.edu</a>
+    </p>
+    <!-- Popup for displaying LaTeX equations -->
+    <div id="equationPopup">
+        <span class="close-btn" onclick="closePopup()">Close X</span>
+        <div id="latexContent"></div>
+    </div>
+
+    <script>
+        // Load and display LaTeX content from file
+        function loadContent(filename, event, column) {
+            fetch(filename)
+                .then(response => response.text())
+                .then(content => showPopup(content, event, column))
+                .catch(err => console.error('Error loading content:', err));
+        }
+
+        // Show the popup at an appropriate position
+        function showPopup(content, event, column) {
+            var popup = document.getElementById('equationPopup');
+            document.getElementById('latexContent').innerHTML = content;
+            popup.style.display = 'block';
+
+            const viewportWidth = window.innerWidth;
+            const clickX = event.pageX;
+
+            popup.style.top = (event.pageY + 30) + 'px';
+
+            if (column === "left" || column === "middle") {
+                const rightSpace = viewportWidth - clickX;
+                popup.style.left = (rightSpace >= 650)
+                    ? (clickX + 20) + 'px'
+                    : Math.max(20, clickX - 620) + 'px';
+            } else {
+                // Right column: position toward center-left
+                popup.style.left = Math.max(20, viewportWidth / 2.5 - 300) + 'px';
+            }
+
+            MathJax.typesetPromise();
+        }
+
+        // Close the popup
+        function closePopup() {
+            document.getElementById('equationPopup').style.display = 'none';
+        }
+
+        // Set up a clickable SVG area with hover highlight and content load on click
+        function initializeClickableArea(svgElement, areaId, contentUrl, column) {
+            var area = svgElement.getElementById(areaId);
+            console.log('Initializing clickable area:', areaId, area);
+            if (area) {
+                area.style.fill = 'transparent';
+                area.style.stroke = 'none';
+                area.style.cursor = 'pointer';
+                area.addEventListener('click',     function(event) { loadContent(contentUrl, event, column); });
+                area.addEventListener('mouseover', function()      { area.style.fill = 'rgba(255, 215, 0, 0.25)'; });
+                area.addEventListener('mouseout',  function()      { area.style.fill = 'transparent'; area.style.stroke = 'none'; });
+            } else {
+                console.warn('Clickable area ' + areaId + ' not found in SVG.');
+            }
+        }
+
+        // Fetch and embed the SVG, then wire up all clickable areas
+        fetch('FNEK.svg')
+            .then(response => response.text())
+            .then(svgText => {
+                document.getElementById('rdcContainer').innerHTML = svgText;
+                const svgElement = document.getElementById('rdcContainer').querySelector('svg');
+                if (!svgElement) { console.error('SVG element not found in container'); return; }
+
+                initializeClickableArea(svgElement,'fnek-1','fnek/fnek_avogadro.html','left');
+		initializeClickableArea(svgElement,'fnek-2','fnek/fnek_electron_rest_mass.html','left');
+		initializeClickableArea(svgElement,'fnek-3','fnek/fnek_speed_of_light.html','left');
+		initializeClickableArea(svgElement,'fnek-4','fnek/fnek_curie_becquerel.html','left');
+		initializeClickableArea(svgElement,'fnek-5','fnek/fnek_becquerel_def.html','left');
+		initializeClickableArea(svgElement,'fnek-6','fnek/fnek_barn_def.html','left');
+		initializeClickableArea(svgElement,'fnek-7','fnek/fnek_gray_def.html','left');
+		initializeClickableArea(svgElement,'fnek-8','fnek/fnek_sievert_def.html','left');
+		initializeClickableArea(svgElement,'fnek-9','fnek/fnek_amu_def.html','left');
+		initializeClickableArea(svgElement,'fnek-10','fnek/fnek_unit_flux.html','left');
+		initializeClickableArea(svgElement,'fnek-11','fnek/fnek_unit_activity.html','left');
+		initializeClickableArea(svgElement,'fnek-12','fnek/fnek_unit_cross_section.html','left');
+		initializeClickableArea(svgElement,'fnek-13','fnek/fnek_unit_power.html','left');
+		initializeClickableArea(svgElement,'fnek-14','fnek/fnek_unit_absorbed_dose.html','left');
+		initializeClickableArea(svgElement,'fnek-15','fnek/fnek_unit_dose_equivalent.html','left');
+		initializeClickableArea(svgElement,'fnek-16','fnek/fnek_unit_exposure.html','left');
+		initializeClickableArea(svgElement,'fnek-17','fnek/fnek_radioactive_decay.html','left');
+		initializeClickableArea(svgElement,'fnek-18','fnek/fnek_decay_constant.html','left');
+		initializeClickableArea(svgElement,'fnek-19','fnek/fnek_mass_energy_equivalence.html','left');
+		initializeClickableArea(svgElement,'fnek-20','fnek/fnek_q_value.html','left');
+		initializeClickableArea(svgElement,'fnek-21','fnek/fnek_thermal_neutron_energy.html','left');
+		initializeClickableArea(svgElement,'fnek-22','fnek/fnek_recoverable_energy_fission.html','left');
+		initializeClickableArea(svgElement,'fnek-23','fnek/fnek_avg_neutrons_per_fission.html','left');
+		initializeClickableArea(svgElement,'fnek-24','fnek/fnek_fissile_isotopes.html','left');
+		initializeClickableArea(svgElement,'fnek-25','fnek/fnek_fertile_isotopes.html','left');
+		initializeClickableArea(svgElement,'fnek-26','fnek/fnek_natural_uranium_enrichment.html','left');
+		initializeClickableArea(svgElement,'fnek-27','fnek/fnek_multiplication_factor.html','left');
+		initializeClickableArea(svgElement,'fnek-28','fnek/fnek_common_moderators.html','left');
+		initializeClickableArea(svgElement,'fnek-29','fnek/fnek_moderator_properties.html','left');
+		initializeClickableArea(svgElement,'fnek-30','fnek/fnek_us_nuclear_electricity.html','left');
+		initializeClickableArea(svgElement,'fnek-31','fnek/fnek_absorbed_dose_rate.html','right');
+		initializeClickableArea(svgElement,'fnek-32','fnek/fnek_uncollided_flux.html','right');
+		initializeClickableArea(svgElement,'fnek-33','fnek/fnek_charged_particle_ionization.html','right');
+		initializeClickableArea(svgElement,'fnek-34','fnek/fnek_charged_particle_excitation.html','right');
+		initializeClickableArea(svgElement,'fnek-35','fnek/fnek_charged_particle_bremsstrahlung.html','right');
+		initializeClickableArea(svgElement,'fnek-36','fnek/fnek_gamma_photoelectric.html','right');
+		initializeClickableArea(svgElement,'fnek-37','fnek/fnek_gamma_compton.html','right');
+		initializeClickableArea(svgElement,'fnek-38','fnek/fnek_gamma_pair_production.html','right');
+		initializeClickableArea(svgElement,'fnek-39','fnek/fnek_pwr_nominal_conditions.html','right');
+		initializeClickableArea(svgElement,'fnek-40','fnek/fnek_uo2_temp_limit.html','right');
+		initializeClickableArea(svgElement,'fnek-41','fnek/fnek_zircaloy_temp_limit.html','right');
+		initializeClickableArea(svgElement,'fnek-42','fnek/fnek_temp_coefficient.html','right');
+		initializeClickableArea(svgElement,'fnek-43','fnek/fnek_control_rod_worth.html','right');
+		initializeClickableArea(svgElement,'fnek-44','fnek/fnek_fission_product_poisons.html','right');
+		initializeClickableArea(svgElement,'fnek-45','fnek/fnek_delayed_neutron_fraction.html','right');
+		initializeClickableArea(svgElement,'fnek-46','fnek/fnek_stable_period.html','right');
+		initializeClickableArea(svgElement,'fnek-47','fnek/fnek_mcnp_unit_length.html','right');
+		initializeClickableArea(svgElement,'fnek-48','fnek/fnek_mcnp_unit_energy.html','right');
+		initializeClickableArea(svgElement,'fnek-49','fnek/fnek_mcnp_unit_time.html','right');
+		initializeClickableArea(svgElement,'fnek-50','fnek/fnek_mcnp_unit_temperature.html','right');
+		initializeClickableArea(svgElement,'fnek-51','fnek/fnek_mcnp_unit_mass_density.html','right');
+		initializeClickableArea(svgElement,'fnek-52','fnek/fnek_mcnp_unit_cross_section.html','right');
+		initializeClickableArea(svgElement,'fnek-53','fnek/fnek_code_comment_symbols.html','right');
+		initializeClickableArea(svgElement,'fnek-54','fnek/fnek_transport_code_classes.html','right');
+		initializeClickableArea(svgElement,'fnek-55','fnek/fnek_gun_type.html','right');
+		initializeClickableArea(svgElement,'fnek-56','fnek/fnek_implosion_type.html','right');
+		initializeClickableArea(svgElement,'fnek-57','fnek/fnek_ssnm.html','right');
+		initializeClickableArea(svgElement,'fnek-58','fnek/fnek_weapons_effect_blast.html','right');
+		initializeClickableArea(svgElement,'fnek-59','fnek/fnek_weapons_effect_thermal.html','right');
+		initializeClickableArea(svgElement,'fnek-60','fnek/fnek_weapons_effect_nuclear_radiation.html','right');
+		initializeClickableArea(svgElement,'fnek-61','fnek/fnek_weapons_effect_emp.html','right');
+		initializeClickableArea(svgElement,'fnek-62','fnek/fnek_fallout_decay.html','right');
+		initializeClickableArea(svgElement,'fnek-63','fnek/fnek_detector_types.html','left');
+		initializeClickableArea(svgElement,'fnek-64','fnek/fnek_gamma_shielding_properties.html','left');
+		initializeClickableArea(svgElement,'fnek-65','fnek/fnek_neutron_shielding_properties.html','left');
+		initializeClickableArea(svgElement,'fnek-66','fnek/fnek_neutron_shielding_principle.html','left');
+		initializeClickableArea(svgElement,'fnek-67','fnek/fnek_background_dose.html','right');
+		initializeClickableArea(svgElement,'fnek-68','fnek/fnek_alpha_range.html','right');
+		initializeClickableArea(svgElement,'fnek-69','fnek/fnek_beta_range.html','right');
+		initializeClickableArea(svgElement,'fnek-70','fnek/fnek_occupational_dose_limit.html','right');
+		initializeClickableArea(svgElement,'fnek-71','fnek/fnek_radiation_protection_principle.html','right');
+		initializeClickableArea(svgElement,'fnek-72','fnek/fnek_graph_binding_energy.html','left');
+		initializeClickableArea(svgElement,'fnek-73','fnek/fnek_graph_fission_yield.html','center');
+		initializeClickableArea(svgElement,'fnek-74','fnek/fnek_graph_chart_of_nuclides.html','right');
+		initializeClickableArea(svgElement,'fnek-75','fnek/fnek_graph_fission_xs.html','left');
+		initializeClickableArea(svgElement,'fnek-76','fnek/fnek_graph_photon_interactions.html','center');
+		initializeClickableArea(svgElement,'fnek-77','fnek/fnek_graph_detector_regions.html','right');
+            })
+            .catch(err => console.error('Error loading SVG:', err));
+
+    </script>
+    <h3 class="warning">YOU WILL NOT HAVE THIS VERSION OF THE FNEK ON ANY EXAM</h3>
+</body>
+
+</html>
