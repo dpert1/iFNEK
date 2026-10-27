@@ -1,0 +1,387 @@
+[
+  {
+    "id": "fnek-1",
+    "column": "left",
+    "body": "<p class=\"section-tag\">Physical Constants</p>\n<h1>Avogadro's Number</h1>\n<div class=\"card\"><p>\\(N_A = 6.02214076 \\times 10^{23} \\ \\text{mol}^{-1}\\)</p><p>The number of constituent particles (atoms, molecules) in one mole of a substance.</p><p>This value is exact by definition (SI, 2019). The printed card shows the older value \\(6.02214199 \\times 10^{23}\\); the difference only appears in the 7th digit.</p></div>"
+  },
+  {
+    "id": "fnek-2",
+    "column": "left",
+    "body": "<p class=\"section-tag\">Physical Constants</p>\n<h1>Electron Rest Mass</h1>\n<div class=\"card\"><p>\\(m_e = 0.511 \\ \\text{MeV}/c^2\\)</p><p>The rest mass energy of an electron. Relevant to pair production (requires \\(E_\\gamma &gt; 2m_ec^2 = 1.022\\) MeV) and beta decay energetics.</p></div>"
+  },
+  {
+    "id": "fnek-3",
+    "column": "left",
+    "body": "<p class=\"section-tag\">Physical Constants</p>\n<h1>Speed of Light in Vacuum</h1>\n<div class=\"card\"><p>\\(c = 2.99792458 \\times 10^8 \\ \\text{m/s}\\)</p><p>Fundamental constant linking mass and energy via \\(E = mc^2\\).</p></div>"
+  },
+  {
+    "id": "fnek-4",
+    "column": "left",
+    "body": "<p class=\"section-tag\">Unit Conversions</p>\n<h1>Unit Conversion: Curie to Becquerel</h1>\n<div class=\"card\"><p>\\(1 \\ \\text{Ci} = 3.7 \\times 10^{10} \\ \\text{Bq}\\)</p><p>The curie (Ci) is the traditional unit of radioactivity; the becquerel (Bq) is the SI unit. One curie was originally defined as the activity of 1 gram of Ra-226.</p></div>"
+  },
+  {
+    "id": "fnek-5",
+    "column": "left",
+    "body": "<p class=\"section-tag\">Unit Conversions</p>\n<h1>Becquerel Definition</h1>\n<div class=\"card\"><p>\\(1 \\ \\text{Bq} = 1 \\ \\text{disintegration/s}\\)</p><p>The SI unit of radioactivity. One becquerel equals one nuclear decay per second.</p></div>"
+  },
+  {
+    "id": "fnek-6",
+    "column": "left",
+    "body": "<p class=\"section-tag\">Unit Conversions</p>\n<h1>Barn Definition</h1>\n<div class=\"card\"><p>\\(1 \\ \\text{b} = 1.0 \\times 10^{-24} \\ \\text{cm}^2\\)</p><p>The barn is the unit of nuclear cross section. Named because early physicists found atomic nuclei \"as big as a barn\" compared to their expectations.</p></div>"
+  },
+  {
+    "id": "fnek-7",
+    "column": "left",
+    "body": "<p class=\"section-tag\">Unit Conversions</p>\n<h1>Gray Definition</h1>\n<div class=\"card\"><p>\\(1 \\ \\text{Gy} = 1 \\ \\text{J/kg} = 100 \\ \\text{rad}\\)</p><p>The SI unit of absorbed dose — energy deposited per unit mass of tissue. Replaces the older unit rad (radiation absorbed dose).</p></div>"
+  },
+  {
+    "id": "fnek-8",
+    "column": "left",
+    "body": "<p class=\"section-tag\">Unit Conversions</p>\n<h1>Sievert Definition</h1>\n<div class=\"card\"><p>\\(1 \\ \\text{Sv} = 100 \\ \\text{rem}\\)</p><p>The SI unit of dose equivalent. Accounts for the biological effectiveness of different radiation types. Replaces the older unit rem (roentgen equivalent man).</p></div>"
+  },
+  {
+    "id": "fnek-9",
+    "column": "left",
+    "body": "<p class=\"section-tag\">Unit Conversions</p>\n<h1>Atomic Mass Unit</h1>\n<div class=\"card\"><p>\\(1 \\ \\text{amu} = 931.494 \\ \\text{MeV}/c^2\\)</p><p>The atomic mass unit is defined as 1/12 the mass of a carbon-12 atom. Used to express nuclear and atomic masses; converts to energy via mass-energy equivalence.</p><p>The current value is 931.49410242 MeV (CODATA 2018). The printed card shows the older 931.494013; both round to 931.494 MeV.</p></div>"
+  },
+  {
+    "id": "fnek-10",
+    "column": "left",
+    "body": "<p class=\"section-tag\">SI Units</p>\n<h1>Unit: Flux</h1>\n<div class=\"card\"><p><strong>Quantity:</strong> Flux</p><p><strong>Unit:</strong> #/cm²-s</p><p>Neutron or photon flux is the number of particles passing through a unit area per unit time. Not an SI base unit but standard in nuclear engineering.</p></div>"
+  },
+  {
+    "id": "fnek-11",
+    "column": "left",
+    "body": "<p class=\"section-tag\">SI Units</p>\n<h1>Unit: Activity</h1>\n<div class=\"card\"><p><strong>Quantity:</strong> Activity</p><p><strong>SI Unit:</strong> Becquerel (Bq)</p><p>Rate of radioactive decay of a source. \\(1 \\ \\text{Bq} = 1 \\ \\text{decay/s}\\).</p></div>"
+  },
+  {
+    "id": "fnek-12",
+    "column": "left",
+    "body": "<p class=\"section-tag\">SI Units</p>\n<h1>Unit: Cross Section</h1>\n<div class=\"card\"><p><strong>Quantity:</strong> Cross Section</p><p><strong>Unit:</strong> Barn (b)</p><p>Effective area representing the probability of a nuclear reaction. \\(1 \\ \\text{b} = 10^{-24} \\ \\text{cm}^2\\).</p></div>"
+  },
+  {
+    "id": "fnek-13",
+    "column": "left",
+    "body": "<p class=\"section-tag\">SI Units</p>\n<h1>Unit: Power</h1>\n<div class=\"card\"><p><strong>Quantity:</strong> Power</p><p><strong>SI Unit:</strong> Watt (W)</p><p>Rate of energy production or transfer. In reactor physics, reactor power [W] = fission rate [fissions/s] × recoverable energy per fission [J/fission].</p></div>"
+  },
+  {
+    "id": "fnek-14",
+    "column": "left",
+    "body": "<p class=\"section-tag\">SI Units</p>\n<h1>Unit: Absorbed Dose</h1>\n<div class=\"card\"><p><strong>Quantity:</strong> Absorbed Dose</p><p><strong>SI Unit:</strong> Gray (Gy)</p><p>Energy deposited by radiation per unit mass of material. \\(1 \\ \\text{Gy} = 1 \\ \\text{J/kg} = 100 \\ \\text{rad}\\).</p></div>"
+  },
+  {
+    "id": "fnek-15",
+    "column": "left",
+    "body": "<p class=\"section-tag\">SI Units</p>\n<h1>Unit: Dose Equivalent</h1>\n<div class=\"card\"><p><strong>Quantity:</strong> Dose Equivalent</p><p><strong>SI Unit:</strong> Sievert (Sv)</p><p>Absorbed dose weighted by radiation type to reflect biological risk. \\(1 \\ \\text{Sv} = 100 \\ \\text{rem}\\).</p></div>"
+  },
+  {
+    "id": "fnek-16",
+    "column": "left",
+    "body": "<p class=\"section-tag\">SI Units</p>\n<h1>Unit: Exposure</h1>\n<div class=\"card\"><p><strong>Quantity:</strong> Exposure</p><p><strong>SI Unit:</strong> C/kg</p><p>Ionization produced in air by X or gamma radiation. Older unit is the roentgen (R); \\(1 \\ \\text{R} \\approx 2.58 \\times 10^{-4} \\ \\text{C/kg}\\).</p></div>"
+  },
+  {
+    "id": "fnek-17",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Radioactive Decay Law</h1>\n<div class=\"card\"><p>\\[A(t) = A_0 e^{-\\lambda t}\\]</p><p>Activity decreases exponentially with time. \\(A_0\\) is the initial activity [Bq], \\(\\lambda\\) is the decay constant [s⁻¹], and \\(t\\) is elapsed time [s].</p></div>"
+  },
+  {
+    "id": "fnek-18",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Decay Constant</h1>\n<div class=\"card\"><p>\\[\\lambda = \\frac{\\ln 2}{T_{1/2}}\\]</p><p>Relates the decay constant \\(\\lambda\\) [s⁻¹] to the half-life \\(T_{1/2}\\) [s]. The half-life is the time for half of a radioactive sample to decay.</p></div>"
+  },
+  {
+    "id": "fnek-19",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Mass-Energy Equivalence</h1>\n<div class=\"card\"><p>\\[E = mc^2\\]</p><p>Mass and energy are interchangeable. A mass of 1 amu corresponds to 931.494 MeV of energy. Fundamental to calculating Q-values and binding energies.</p></div>"
+  },
+  {
+    "id": "fnek-20",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Q-Value of a Nuclear Reaction</h1>\n<div class=\"card\"><p>\\[Q = -\\Delta m c^2\\]</p><p>The Q-value is the energy released (Q &gt; 0) or absorbed (Q &lt; 0) in a nuclear reaction. \\(\\Delta m\\) is the mass difference between products and reactants. Calculated from atomic mass tables using \\(1 \\ \\text{amu} = 931.494 \\ \\text{MeV}/c^2\\).</p></div>"
+  },
+  {
+    "id": "fnek-21",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Thermal Neutron Energy</h1>\n<div class=\"card\"><p>\\[E_{th} = 0.0253 \\ \\text{eV} \\quad (T = 20^\\circ\\text{C})\\]</p><p>The most probable energy of a neutron in thermal equilibrium with its surroundings at room temperature. Corresponds to a neutron speed of ~2200 m/s. Cross sections are often tabulated at this energy.</p></div>"
+  },
+  {
+    "id": "fnek-22",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Recoverable Energy per Fission</h1>\n<div class=\"card\"><p>\\[E_R \\approx 200 \\ \\text{MeV}\\]</p><p>The recoverable (deposited) energy per fission event of U-235. Includes kinetic energy of fission fragments (~168 MeV), prompt gammas, betas, and delayed radiation. Excludes energy carried away by neutrinos (~10 MeV).</p></div>"
+  },
+  {
+    "id": "fnek-23",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Average Neutrons Released per Fission</h1>\n<div class=\"card\"><p>\\[2 \\leq \\bar{\\nu} \\leq 3\\]</p><p>The average number of neutrons released per fission of U-235. For thermal fission of U-235, \\(\\bar{\\nu} \\approx 2.43\\). Not all neutrons are available to sustain the chain reaction — leakage and parasitic absorption reduce the effective number.</p></div>"
+  },
+  {
+    "id": "fnek-24",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Common Fissile Isotopes</h1>\n<div class=\"card\"><ul><li><strong>U-235:</strong> The only naturally occurring fissile nuclide (0.711 wt% in natural uranium).</li><li><strong>Pu-239:</strong> Bred from U-238 via neutron capture; primary fissile material in plutonium weapons and MOX fuel.</li><li><strong>U-233:</strong> Bred from Th-232; used in thorium fuel cycles.</li><li><strong>Pu-241:</strong> Fissile; builds up in reactor fuel during operation.</li></ul><p>Fissile nuclides sustain fission with thermal (slow) neutrons.</p></div>"
+  },
+  {
+    "id": "fnek-25",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Common Fertile Isotopes</h1>\n<div class=\"card\"><ul><li><strong>U-238:</strong> Captures a neutron to become U-239, which beta-decays to Np-239, then to Pu-239 (fissile).</li><li><strong>Th-232:</strong> Captures a neutron to become Th-233, which beta-decays to Pa-233, then to U-233 (fissile).</li></ul><p>Fertile nuclides do not fission with thermal neutrons (they fission only with fast neutrons and cannot sustain a chain reaction on their own), but they breed fissile material via neutron capture.</p></div>"
+  },
+  {
+    "id": "fnek-26",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Weight Percent of U-235 in Natural Uranium</h1>\n<div class=\"card\"><p><strong>0.711 wt% U-235</strong></p><p>Natural uranium consists of ~99.3% U-238 and ~0.711% U-235 by mass. Reactor-grade LEU is enriched to 3–5%; weapons-grade HEU is enriched to &gt;90%.</p></div>"
+  },
+  {
+    "id": "fnek-27",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Multiplication Factor (k)</h1>\n<div class=\"card\"><p>\\[k = \\frac{\\text{neutrons in generation } (n+1)}{\\text{neutrons in generation } (n)}\\]</p><ul><li>\\(k &lt; 1\\): subcritical — chain reaction dies out.</li><li>\\(k = 1\\): critical — self-sustaining chain reaction.</li><li>\\(k &gt; 1\\): supercritical — chain reaction grows.</li></ul></div>"
+  },
+  {
+    "id": "fnek-28",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Common Moderators</h1>\n<div class=\"card\"><ul><li><strong>Light water (H₂O):</strong> Most common; inexpensive but absorbs some neutrons, requiring enriched fuel.</li><li><strong>Heavy water (D₂O):</strong> Very low absorption; allows natural uranium fuel but is expensive to produce.</li><li><strong>Graphite (C):</strong> Low absorption, solid moderator; used in early reactors and gas-cooled designs.</li></ul></div>"
+  },
+  {
+    "id": "fnek-29",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Good Moderator Properties</h1>\n<div class=\"card\"><ol><li><strong>Low atomic mass number (A):</strong> More energy transferred per elastic collision — lighter nuclei are more effective at slowing neutrons.</li><li><strong>Low microscopic absorption cross section (σ_a):</strong> Moderator should not parasitically absorb neutrons needed for the chain reaction.</li><li><strong>High microscopic scattering cross section (σ_s):</strong> High probability of scattering interactions ensures neutrons slow down efficiently.</li></ol></div>"
+  },
+  {
+    "id": "fnek-30",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>U.S. Electricity from Nuclear Power</h1>\n<div class=\"card\"><p><strong>~19% (2018, Source: EIA)</strong></p><p>Nuclear power is the largest source of carbon-free electricity in the United States. The U.S. operates the largest fleet of nuclear reactors in the world (~93 operating reactors as of 2018).</p></div>"
+  },
+  {
+    "id": "fnek-31",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>External Gamma-Ray Absorbed Dose Rate</h1>\n<div class=\"card\"><p>\\[\\dot{D} = \\phi E_\\gamma \\left(\\frac{\\mu_{en}}{\\rho}\\right)\\]</p><ul><li>\\(\\dot{D}\\): absorbed dose rate [Gy/s]</li><li>\\(\\phi\\): photon flux [#/cm²-s]</li><li>\\(E_\\gamma\\): photon energy [MeV]</li><li>\\(\\mu_{en}/\\rho\\): mass energy-absorption coefficient [cm²/g]</li></ul><p>With \\(\\phi\\) in #/cm²-s, \\(E_\\gamma\\) in MeV and \\(\\mu_{en}/\\rho\\) in cm²/g, the product is in MeV/(g·s). To get Gy/s, multiply by \\(1.602 \\times 10^{-10}\\) Gy·g/MeV (1 MeV = \\(1.602 \\times 10^{-13}\\) J and 1 g = \\(10^{-3}\\) kg).</p></div>"
+  },
+  {
+    "id": "fnek-32",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>Uncollided Gamma Flux from a Point Source</h1>\n<div class=\"card\"><p>\\[\\phi = \\frac{S \\, e^{-\\mu r}}{4\\pi r^2}\\]</p><ul><li>\\(\\phi\\): uncollided flux [#/cm²-s]</li><li>\\(S\\): source strength [#/s]</li><li>\\(\\mu\\): linear attenuation coefficient [cm⁻¹]</li><li>\\(r\\): distance from source [cm]</li></ul><p>Combines inverse-square geometric spreading with exponential attenuation through material.</p></div>"
+  },
+  {
+    "id": "fnek-33",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>Charged Particle Interaction: Ionization</h1>\n<div class=\"card\"><p><strong>Ionization</strong> is the primary energy-loss mechanism for heavy charged particles (alphas, protons) and electrons in matter.</p><p>The incident particle transfers energy to bound atomic electrons, ejecting them from their atoms and creating ion pairs. Energy loss per unit path length is described by the Bethe-Bloch formula. Most of a charged particle's dose is deposited near the end of its range (Bragg peak).</p></div>"
+  },
+  {
+    "id": "fnek-34",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>Charged Particle Interaction: Excitation</h1>\n<div class=\"card\"><p><strong>Excitation</strong> occurs when a charged particle transfers energy to a bound electron, raising it to a higher energy state without ejecting it.</p><p>The excited atom subsequently returns to ground state by emitting a photon (fluorescence) or transferring energy to neighboring atoms (non-radiative relaxation). Excitation contributes to energy loss alongside ionization but produces no free ion pairs.</p></div>"
+  },
+  {
+    "id": "fnek-35",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>Charged Particle Interaction: Bremsstrahlung</h1>\n<div class=\"card\"><p><strong>Bremsstrahlung</strong> (German: \"braking radiation\") is electromagnetic radiation emitted when a charged particle is deflected by the Coulomb field of an atomic nucleus.</p><p>Significant primarily for electrons (light particles); negligible for heavy charged particles at diagnostic energies. Bremsstrahlung production scales as Z² of the absorber — high-Z materials produce more. This is the basis for X-ray tube operation.</p></div>"
+  },
+  {
+    "id": "fnek-36",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>Gamma Interaction: Photoelectric Effect</h1>\n<div class=\"card\"><p>The incident photon is <strong>completely absorbed</strong> by a bound inner-shell electron, which is ejected as a photoelectron with kinetic energy \\(T = E_\\gamma - E_b\\).</p><ul><li>Dominant at low photon energies (&lt;0.1 MeV)</li><li>Cross section scales as \\(\\sigma_{pe} \\propto Z^{4-5} / E_\\gamma^{3.5}\\)</li><li>Leaves a vacancy filled by characteristic X-ray or Auger electron emission</li></ul></div>"
+  },
+  {
+    "id": "fnek-37",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>Gamma Interaction: Compton Scatter</h1>\n<div class=\"card\"><p>The incident photon scatters off a <strong>loosely bound (essentially free) electron</strong>, transferring part of its energy. Both the scattered photon and recoil electron continue in new directions.</p><ul><li>Dominant at intermediate energies (0.1–10 MeV)</li><li>Cross section scales linearly with Z (electrons per atom)</li><li>Scattered photon energy: \\(E^\\prime = \\frac{E_\\gamma}{1 + \\frac{E_\\gamma}{m_e c^2}(1-\\cos\\theta)}\\)</li></ul></div>"
+  },
+  {
+    "id": "fnek-38",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>Gamma Interaction: Pair Production</h1>\n<div class=\"card\"><p>The incident photon is <strong>converted into an electron-positron pair</strong> in the Coulomb field of a nucleus. The photon must supply at least the rest mass energy of both particles.</p><ul><li>Threshold: \\(E_\\gamma \\geq 2 m_e c^2 = 1.022 \\ \\text{MeV}\\)</li><li>Dominant at high energies (&gt;5–10 MeV)</li><li>Cross section scales as \\(Z^2\\)</li><li>Positron subsequently annihilates with an electron, producing two 0.511 MeV photons</li></ul></div>"
+  },
+  {
+    "id": "fnek-39",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Nominal PWR Moderator Conditions</h1>\n<div class=\"card\"><ul><li><strong>Pressure:</strong> ~2250 psia (~155 bar)</li><li><strong>Temperature:</strong> 600°F (~315°C)</li></ul><p>High pressure keeps the primary coolant liquid above its normal boiling point. These conditions define the nominal operating state of a pressurized water reactor primary loop.</p><p>The printed card lists 2000 psi; the typical nominal primary pressure is about 2250 psia (155 bar).</p></div>"
+  },
+  {
+    "id": "fnek-40",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Design Limit: UO₂ Maximum Temperature</h1>\n<div class=\"card\"><p><strong>Maximum temperature limit for UO₂ fuel: 4500°F (~2480°C)</strong></p><p>The melting point of uranium dioxide is ~2865°C. The design limit of 4500°F provides margin below melting to prevent fuel damage, fission gas release, and cladding failure during normal operation and design-basis accidents.</p></div>"
+  },
+  {
+    "id": "fnek-41",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Design Limit: Zircaloy Maximum Temperature</h1>\n<div class=\"card\"><p><strong>Maximum temperature limit for zircaloy cladding: 2200°F (~1204°C)</strong></p><p>Above this temperature, zircaloy reacts exothermically with steam: Zr + 2H₂O → ZrO₂ + 2H₂. This generates hydrogen gas (explosion risk) and additional heat, making 2200°F the key safety limit for loss-of-coolant accident (LOCA) analysis.</p></div>"
+  },
+  {
+    "id": "fnek-42",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Temperature Coefficient of Reactivity</h1>\n<div class=\"card\"><p><strong>The temperature coefficient of reactivity must be negative.</strong></p><p>A negative temperature coefficient means that as reactor temperature rises, reactivity decreases — a self-limiting, inherently safe response. If power increases → temperature rises → reactivity drops → power decreases. A positive temperature coefficient creates a dangerous positive feedback loop (e.g., RBMK/Chernobyl).</p></div>"
+  },
+  {
+    "id": "fnek-43",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Control Rod Worth Limit</h1>\n<div class=\"card\"><p><strong>Control rod worth must be less than $1.00 (one dollar of reactivity)</strong></p><p>One dollar (\\$1.00) of reactivity equals the delayed neutron fraction \\(\\beta\\). If a single rod has worth ≥ \\$1.00, its sudden ejection could drive the reactor prompt critical — a condition where the chain reaction is sustained by prompt neutrons alone, causing an uncontrollable power excursion.</p></div>"
+  },
+  {
+    "id": "fnek-44",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Common Fission Product Poisons</h1>\n<div class=\"card\"><ul><li><strong>Xe-135:</strong> Largest neutron poison in thermal reactors (\\(\\sigma_a \\approx 2.6 \\times 10^6\\) b). Builds up over ~40–50 hours; causes \"xenon oscillations\" and iodine pit after shutdown.</li><li><strong>Sm-149:</strong> Second largest poison (\\(\\sigma_a \\approx 4 \\times 10^4\\) b). Reaches equilibrium over several days; increases after shutdown as Pm-149 decays.</li></ul></div>"
+  },
+  {
+    "id": "fnek-45",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Delayed Neutron Fraction</h1>\n<div class=\"card\"><p><strong>Delayed neutron fraction for thermal fission of U-235: \\(\\beta = 0.0065\\)</strong></p><p>About 0.65% of fission neutrons are emitted with a delay (seconds to minutes) from fission fragment decay. This extends the effective neutron generation time from ~10⁻⁵ s to ~0.1 s, making mechanical reactor control feasible. Reactivity is often expressed in units of \\(\\beta\\) (dollars and cents).</p></div>"
+  },
+  {
+    "id": "fnek-46",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Reactor Stable Period After Large Negative Reactivity</h1>\n<div class=\"card\"><p><strong>Stable period after insertion of large negative reactivity: \\(T \\approx -80 \\ \\text{s}\\)</strong></p><p>After a large negative reactivity insertion (e.g., scram), the reactor power does not drop instantly. Prompt neutrons die out quickly, but the longest-lived delayed neutron precursor group (half-life ~55 s) governs the asymptotic decay. The reactor power falls with a stable period equal to that group's mean life, \\(55.7/\\ln 2 \\approx 80\\) seconds (negative because power is decreasing).</p><p>The printed card lists \\(T \\approx 85\\) s.</p></div>"
+  },
+  {
+    "id": "fnek-47",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 361 — Computational Design in Nuclear Engineering</p>\n<h1>MCNP Standard Unit: Length</h1>\n<div class=\"card\"><table><tr><th>Measurement</th><th>Unit</th></tr><tr><td>Length</td><td><strong>cm</strong></td></tr></table><p>All geometry in MCNP is specified in centimeters. Converting CAD models or hand calculations from other unit systems (inches, meters) to cm before input is a common source of error.</p></div>"
+  },
+  {
+    "id": "fnek-48",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 361 — Computational Design in Nuclear Engineering</p>\n<h1>MCNP Standard Unit: Energy</h1>\n<div class=\"card\"><table><tr><th>Measurement</th><th>Unit</th></tr><tr><td>Energy</td><td><strong>MeV</strong></td></tr></table><p>All particle energies, source definitions, and tally energy bins in MCNP are specified in MeV. Cross section libraries are also indexed by energy in MeV.</p></div>"
+  },
+  {
+    "id": "fnek-49",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 361 — Computational Design in Nuclear Engineering</p>\n<h1>MCNP Standard Unit: Time</h1>\n<div class=\"card\"><table><tr><th>Measurement</th><th>Unit</th></tr><tr><td>Time</td><td><strong>shakes (10⁻⁸ s)</strong></td></tr></table><p>One shake = 10⁻⁸ seconds. The name comes from the expression \"two shakes of a lamb's tail\" — roughly the time scale of a fission chain reaction in a weapon. Used for time-dependent tallies in MCNP.</p></div>"
+  },
+  {
+    "id": "fnek-50",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 361 — Computational Design in Nuclear Engineering</p>\n<h1>MCNP Standard Unit: Temperature</h1>\n<div class=\"card\"><table><tr><th>Measurement</th><th>Unit</th></tr><tr><td>Temperature</td><td><strong>MeV (kT)</strong></td></tr></table><p>Temperature in MCNP is expressed as \\(kT\\) in MeV, where \\(k\\) is Boltzmann's constant. Room temperature (20°C) corresponds to \\(kT \\approx 2.53 \\times 10^{-8}\\) MeV. Used to select Doppler-broadened cross section data.</p></div>"
+  },
+  {
+    "id": "fnek-51",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 361 — Computational Design in Nuclear Engineering</p>\n<h1>MCNP Standard Unit: Mass Density</h1>\n<div class=\"card\"><table><tr><th>Measurement</th><th>Unit</th></tr><tr><td>Mass Density</td><td><strong>g/cm³</strong></td></tr></table><p>Material densities in MCNP are entered in g/cm³ (as a negative number in the material card, to distinguish from atom density in atoms/b-cm). Correct density is critical for accurate attenuation and reaction rate calculations.</p></div>"
+  },
+  {
+    "id": "fnek-52",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 361 — Computational Design in Nuclear Engineering</p>\n<h1>MCNP Standard Unit: Cross Section</h1>\n<div class=\"card\"><table><tr><th>Measurement</th><th>Unit</th></tr><tr><td>Cross Section</td><td><strong>barns (b)</strong></td></tr></table><p>Microscopic cross sections in MCNP libraries are stored in barns (\\(1 \\ \\text{b} = 10^{-24} \\ \\text{cm}^2\\)). MCNP internally converts to macroscopic cross sections [cm⁻¹] using the material density and composition.</p></div>"
+  },
+  {
+    "id": "fnek-53",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 361 — Computational Design in Nuclear Engineering</p>\n<h1>Comment Symbols in Nuclear Codes</h1>\n<div class=\"card\"><table><tr><th>Code</th><th>Comment Symbol</th></tr><tr><td>MATLAB</td><td><strong>%</strong></td></tr><tr><td>SCALE</td><td><strong>' (apostrophe)</strong></td></tr><tr><td>MCNP (full line)</td><td><strong>C</strong></td></tr><tr><td>MCNP (in-line)</td><td><strong>$</strong></td></tr></table><p>Proper use of comments is critical for code readability, peer review, and debugging in nuclear engineering analyses.</p></div>"
+  },
+  {
+    "id": "fnek-54",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 361 — Computational Design in Nuclear Engineering</p>\n<h1>Two Major Classes of Transport Codes</h1>\n<div class=\"card\"><ul><li><strong>Monte Carlo:</strong> Simulates individual particle histories using random sampling. Inherently 3D and geometry-flexible; statistically converges with more particle histories. Examples: MCNP, OpenMC. Best for complex geometry and shielding.</li><li><strong>Deterministic:</strong> Solves the transport equation directly using numerical discretization (energy groups, spatial mesh, angular quadrature). Faster for simple geometries; provides full-phase-space solution. Examples: SCALE/XSDRN, PARTISN.</li></ul></div>"
+  },
+  {
+    "id": "fnek-55",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Supercritical Assembly: Gun-Type</h1>\n<div class=\"card\"><p><strong>Gun-type assembly uses U-235 (HEU).</strong></p><p>A subcritical mass of HEU is propelled down a gun barrel into a second subcritical target mass, forming a supercritical combined mass upon impact. Simple and reliable but inefficient — requires large amounts of HEU and is too slow for Pu-239 (pre-detonation risk due to Pu-240 spontaneous fission). Used in the Little Boy weapon.</p></div>"
+  },
+  {
+    "id": "fnek-56",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Supercritical Assembly: Implosion-Type</h1>\n<div class=\"card\"><p><strong>Implosion-type assembly uses Pu-239 or U-235.</strong></p><p>A subcritical fissile core (pit) is surrounded by precisely shaped conventional explosive lenses. Simultaneous detonation drives a symmetric inward shockwave that compresses the pit, increasing its density above the critical density threshold. Much faster than gun-type, allowing use of Pu-239 despite its high spontaneous fission rate. More compact and efficient. Used in the Fat Man weapon and all modern nuclear warheads.</p></div>"
+  },
+  {
+    "id": "fnek-57",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Strategic Special Nuclear Material (SSNM)</h1>\n<div class=\"card\"><p><strong>Strategic Special Nuclear Material (SSNM):</strong></p><ul><li><strong>Highly Enriched Uranium (HEU):</strong> U-235 enriched to ≥20%; weapons-grade is ≥90%.</li><li><strong>U-233:</strong> Bred from Th-232; fissile and weapons-usable.</li><li><strong>Plutonium (any isotopic composition):</strong> Primarily Pu-239; produced in reactors from U-238.</li></ul><p>SSNM is subject to strict safeguards under the IAEA and U.S. law due to its direct use potential in nuclear weapons.</p></div>"
+  },
+  {
+    "id": "fnek-58",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Weapons Effect: Blast</h1>\n<div class=\"card\"><p><strong>Blast</strong> accounts for approximately 50% of a nuclear weapon's total energy.</p><p>The rapid energy release creates a high-pressure shock wave that propagates outward at supersonic speed. Damage is caused by overpressure (crushing structures) and dynamic pressure (high-velocity winds). Effects scale with the cube root of yield — a weapon 8× larger has twice the blast radius. Primary cause of structural damage and casualties at moderate to large ranges.</p></div>"
+  },
+  {
+    "id": "fnek-59",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Weapons Effect: Thermal Radiation</h1>\n<div class=\"card\"><p><strong>Thermal radiation</strong> accounts for approximately 35% of a nuclear weapon's total energy.</p><p>The fireball radiates intense heat and light across a wide area. Effects include flash blindness, skin burns (first, second, third degree), and ignition of flammable materials. Thermal fluence [cal/cm²] determines burn severity. Thermal effects have a larger range than blast for multi-megaton weapons and can cause mass fires (firestorm) in urban areas.</p></div>"
+  },
+  {
+    "id": "fnek-60",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Weapons Effect: Nuclear Radiation</h1>\n<div class=\"card\"><p><strong>Nuclear radiation</strong> (initial and residual) accounts for approximately 15% of a nuclear weapon's total energy.</p><ul><li><strong>Initial (prompt) radiation:</strong> Neutrons and gamma rays emitted within the first minute. Range limited by atmospheric attenuation; significant within ~1–2 km for kiloton weapons.</li><li><strong>Residual radiation (fallout):</strong> Radioactive fission products deposited downwind. Dose rate decays approximately as \\(R = R_1 t^{-1.2}\\). Primary hazard for large areas downwind over hours to days.</li></ul></div>"
+  },
+  {
+    "id": "fnek-61",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Weapons Effect: Electromagnetic Pulse (EMP)</h1>\n<div class=\"card\"><p><strong>Electromagnetic Pulse (EMP)</strong> is produced by the interaction of prompt gamma rays with the atmosphere, generating a large, rapid electric field pulse.</p><p>A high-altitude nuclear detonation (HEMP, &gt;30 km) can produce an EMP covering continental distances, potentially disabling unshielded electronics, power grids, communications, and electronic systems over thousands of square kilometers. Does not directly harm personnel but can cause catastrophic infrastructure failure.</p></div>"
+  },
+  {
+    "id": "fnek-62",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Fallout Activity Decay Rule</h1>\n<div class=\"card\"><p>\\[R = R_1 t^{-1.2}\\]</p><ul><li>\\(R\\): dose rate at time \\(t\\) [rad/hr or R/hr]</li><li>\\(R_1\\): dose rate at 1 hour after detonation</li><li>\\(t\\): time after detonation [hours]</li></ul><p>The \"7-10 rule\" approximation: for every 7-fold increase in time, dose rate decreases by a factor of 10. Fallout dose rates drop rapidly in the first hours, but long-lived isotopes can remain hazardous for days to weeks.</p></div>"
+  },
+  {
+    "id": "fnek-63",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 452 — Instrumentation and Shielding</p>\n<h1>Common Radiation Detector Types</h1>\n<div class=\"card\"><ul><li><strong>Gas-filled:</strong> Ionizing radiation creates ion pairs in fill gas; collected by electrodes. Types include ionization chambers, proportional counters, and GM tubes. Robust and inexpensive.</li><li><strong>Scintillation:</strong> Radiation excites a scintillator material (NaI, BGO, plastic) producing light photons detected by a PMT. Good for gamma spectroscopy and high count rates.</li><li><strong>Semiconductor:</strong> Radiation creates electron-hole pairs in Si or Ge. Very low energy per pair → superior energy resolution. HPGe requires cryogenic cooling.</li></ul></div>"
+  },
+  {
+    "id": "fnek-64",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 452 — Instrumentation and Shielding</p>\n<h1>Good Gamma-Ray Shielding Properties</h1>\n<div class=\"card\"><ul><li><strong>High atomic number (Z):</strong> High-Z materials have more electrons per atom, increasing photoelectric cross section (∝ Z⁴⁻⁵) and pair production (∝ Z²).</li><li><strong>High linear attenuation coefficient (μ):</strong> Greater attenuation per unit thickness means thinner, more compact shields. Lead (Pb) is the most common gamma shield material due to high Z and density.</li></ul></div>"
+  },
+  {
+    "id": "fnek-65",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 452 — Instrumentation and Shielding</p>\n<h1>Good Neutron Shielding Properties</h1>\n<div class=\"card\"><ul><li><strong>Low atomic mass number (A):</strong> Light nuclei (especially hydrogen in water or polyethylene) transfer the most energy per elastic collision, efficiently moderating fast neutrons to thermal energies.</li><li><strong>High neutron absorption cross section:</strong> Once thermalized, neutrons must be absorbed. Materials like boron (B-10, σ_a ~ 3840 b) and cadmium are common thermal neutron absorbers incorporated into shields.</li></ul></div>"
+  },
+  {
+    "id": "fnek-66",
+    "column": "left",
+    "body": "<p class=\"section-tag\">NE 452 — Instrumentation and Shielding</p>\n<h1>Basic Principle of Neutron Shielding</h1>\n<div class=\"card\"><p><strong>Two-step process: slow down fast neutrons, then absorb thermal neutrons.</strong></p><ol><li><strong>Moderation:</strong> Use low-Z material (water, polyethylene, concrete) to thermalize fast neutrons via elastic scattering.</li><li><strong>Absorption:</strong> Use high-absorption material (borated polyethylene, cadmium, B₄C) to capture the now-thermal neutrons before they escape.</li></ol><p>Note: high-Z gamma shields are poor neutron shields, and vice versa — composite shields address both radiation types in layered designs.</p></div>"
+  },
+  {
+    "id": "fnek-67",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 474 — Radiological Safety</p>\n<h1>Average Background Radiation Dose</h1>\n<div class=\"card\"><p><strong>~1 mrem/day (~360 mrem/year)</strong></p><p>This rule of thumb is roughly the natural background: about 300-360 mrem/year from cosmic radiation, radon and other terrestrial radionuclides, and internal radionuclides (K-40, C-14). Medical exposures roughly double that: the U.S. average total from all sources is about 620 mrem/year (NCRP Report 160).</p></div>"
+  },
+  {
+    "id": "fnek-68",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 474 — Radiological Safety</p>\n<h1>Range of Alpha Particles in Air</h1>\n<div class=\"card\"><p><strong>Range of alpha particle (&lt;6 MeV) in air: &lt;5 cm</strong></p><p>Alpha particles are doubly charged and heavy, causing dense ionization that rapidly depletes their energy. They are stopped by a few centimeters of air, a sheet of paper, or the dead outer layer of skin. Alpha emitters are not an external hazard but are highly dangerous if inhaled or ingested.</p></div>"
+  },
+  {
+    "id": "fnek-69",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 474 — Radiological Safety</p>\n<h1>Range of Beta Particles in Air</h1>\n<div class=\"card\"><p><strong>Range of beta particle in air: ~12 ft per MeV</strong></p><p>Beta particles travel much farther than alphas due to their lower charge and mass. A 1 MeV beta travels ~12 ft (~3.7 m) in air. They can penetrate skin and cause burns but are stopped by a few mm of plastic, aluminum, or glass. Bremsstrahlung X-rays produced in high-Z shielding materials (e.g., lead) can be a secondary hazard.</p></div>"
+  },
+  {
+    "id": "fnek-70",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 474 — Radiological Safety</p>\n<h1>Annual Occupational Dose Limits</h1>\n<div class=\"card\"><p>The annual limit for occupational radiation exposure to an adult is the <strong>more limiting</strong> of:</p><ul><li><strong>0.05 Sv (5 rem)</strong> effective dose to the whole body</li><li><strong>0.5 Sv (50 rem)</strong> to any individual organ (except eyes)</li><li><strong>0.15 Sv (15 rem)</strong> to the lens of the eye</li></ul><p>These limits apply to planned, controlled occupational exposures. Emergency dose limits are separate and higher. Members of the public are limited to 0.001 Sv (0.1 rem) per year from licensed facilities.</p></div>"
+  },
+  {
+    "id": "fnek-71",
+    "column": "right",
+    "body": "<p class=\"section-tag\">NE 474 — Radiological Safety</p>\n<h1>Basic Principles of Radiation Protection</h1>\n<div class=\"card\"><p>The three fundamental methods of radiation protection:</p><ol><li><strong>Time:</strong> Minimize time spent near a radiation source — dose is directly proportional to exposure time.</li><li><strong>Distance:</strong> Maximize distance from the source — dose rate from a point source decreases with the inverse square of distance (\\(\\dot{D} \\propto 1/r^2\\)).</li><li><strong>Shielding:</strong> Interpose appropriate shielding material — attenuates radiation exponentially (\\(I = I_0 e^{-\\mu x}\\)).</li></ol></div>"
+  },
+  {
+    "id": "fnek-72",
+    "column": "left",
+    "body": "<p class=\"section-tag\">FNEK Reference Graphs</p>\n<h1>Figure 1: Binding Energy per Nucleon Curve</h1>\n<div class=\"card\"><h2>Shape:</h2><p>Peaks near A = 56 (iron/nickel region) at ~8.8 MeV/nucleon, rises steeply from hydrogen, and gradually decreases for heavy nuclei (A &gt; 56).</p></div><div class=\"graph-desc\"><h2>Significance:</h2><ul><li>Nuclei near the peak (Fe-56) are the most stable — maximum binding energy per nucleon.</li><li><strong>Fission:</strong> Heavy nuclei (A ~ 235) have lower binding energy/nucleon (~7.6 MeV). Splitting them releases energy because products have higher binding energy/nucleon.</li><li><strong>Fusion:</strong> Light nuclei (H, D, T) have very low binding energy/nucleon. Fusing them releases energy for the same reason.</li><li>The curve explains why both fission and fusion release energy.</li></ul></div>"
+  },
+  {
+    "id": "fnek-73",
+    "column": "middle",
+    "body": "<p class=\"section-tag\">FNEK Reference Graphs</p>\n<h1>Figure 2: Fission Product Yield Curve</h1>\n<div class=\"card\"><h2>Shape:</h2><p>Double-humped curve. Y-axis: fission yield (%), X-axis: mass number A (70–160). Two peaks near A ~ 90–100 and A ~ 130–140 with a valley near A ~ 118 (symmetric fission is rare).</p></div><div class=\"graph-desc\"><h2>Significance:</h2><ul><li>Fission is asymmetric — nuclei preferentially split into one light and one heavy fragment.</li><li>The 14 MeV (fast neutron) curve is slightly flatter/broader than the thermal curve — higher-energy fission allows more symmetric splits.</li><li>Peak products include Kr/Sr (light group) and Xe/Cs/Ba (heavy group) — these are the isotopes of primary concern for fallout and reactor fission products.</li><li>The valley at symmetric fission reflects nuclear shell structure effects.</li></ul></div>"
+  },
+  {
+    "id": "fnek-74",
+    "column": "right",
+    "body": "<p class=\"section-tag\">FNEK Reference Graphs</p>\n<h1>Figure 3: Chart of the Nuclides — Nuclear Process Locations</h1>\n<div class=\"card\"><h2>Shape:</h2><p>Grid with the original nucleus at center. Surrounding cells show reaction products by particle in/out. Axes represent changes in proton (Z) and neutron (N) number.</p></div><div class=\"graph-desc\"><h2>Significance:</h2><ul><li>Each nuclear reaction moves a nuclide in a specific direction on the chart of the nuclides.</li><li>\\((n, \\gamma)\\) capture: moves one step right (N+1, same Z).</li><li>\\(\\beta^-\\) decay: moves diagonally up-left (Z+1, N-1).</li><li>\\(\\alpha\\) decay: moves down-left (Z-2, N-2).</li><li>Understanding these directions is essential for tracing decay chains and transmutation in reactors.</li></ul></div>"
+  },
+  {
+    "id": "fnek-75",
+    "column": "left",
+    "body": "<p class=\"section-tag\">FNEK Reference Graphs</p>\n<h1>Figure 4: Microscopic Fission Cross Section for U-235</h1>\n<div class=\"card\"><h2>Shape:</h2><p>Log-log plot. Three regions: (1) 1/v region at low energy where σ ∝ 1/E^½, (2) resonance region (1 eV – 1 keV) with sharp peaks, (3) smooth continuum at high energies (&gt;1 keV).</p></div><div class=\"graph-desc\"><h2>Significance:</h2><ul><li>Very high cross section at thermal energies (~580 b at 0.0253 eV) — explains why thermal reactors are efficient.</li><li>The 1/v region means slower neutrons are more likely to cause fission — the basis of moderation.</li><li>Resonance region represents specific energy levels of the compound nucleus, where the cross section spikes. (The resonance escape probability p in the four-factor formula accounts for resonance <em>capture</em> while slowing down, mainly in U-238, not these U-235 fission resonances.)</li><li>Cross section drops significantly at fast energies — fast reactors require higher enrichment to compensate.</li></ul></div>"
+  },
+  {
+    "id": "fnek-76",
+    "column": "middle",
+    "body": "<p class=\"section-tag\">FNEK Reference Graphs</p>\n<h1>Figure 5: Photon Interaction Dominance by Energy and Z</h1>\n<div class=\"card\"><h2>Shape:</h2><p>Plot of absorber Z vs. photon energy (hν in MeV). Three regions separated by two curves: photoelectric dominant (low energy/high Z), Compton dominant (middle region), pair production dominant (high energy/high Z).</p></div><div class=\"graph-desc\"><h2>Significance:</h2><ul><li>Shows which interaction mechanism dominates for a given photon energy and shield material.</li><li>For medical/industrial gamma energies (0.1–1 MeV) in tissue (Z ~ 7): Compton scatter dominates.</li><li>For high-Z shields (lead, Z=82) at low energies: photoelectric dominates — explains lead's effectiveness at diagnostic X-ray energies.</li><li>At very high energies in high-Z material: pair production dominates.</li><li>Used to select appropriate shielding material for a given radiation source.</li></ul></div>"
+  },
+  {
+    "id": "fnek-77",
+    "column": "right",
+    "body": "<p class=\"section-tag\">FNEK Reference Graphs</p>\n<h1>Figure 6: Operating Regions of Ionizing Detectors</h1>\n<div class=\"card\"><h2>Shape:</h2><p>Pulse amplitude (log scale) vs. applied voltage for a gas-filled detector. Two curves show events depositing 1 MeV and 2 MeV in the gas. Labelled regions: ion saturation, proportional, limited proportionality, and Geiger-Mueller. The curves converge in the Geiger-Mueller region.</p></div><div class=\"graph-desc\"><h2>Significance:</h2><ul><li><strong>Recombination (lowest voltages, unlabelled start of the curves):</strong> Ions recombine before collection; pulse grows with voltage. Not useful for detection.</li><li><strong>Ion saturation (ionization chamber) region:</strong> All primary ions collected; pulse proportional to energy deposited, so the 2 MeV curve sits above the 1 MeV curve. This is how radiations that deposit different energies (e.g., alphas vs. betas) are distinguished.</li><li><strong>Proportional region:</strong> Gas multiplication amplifies the signal while keeping it proportional to the initial ionization; radiation types can still be distinguished by pulse height.</li><li><strong>Limited proportionality:</strong> Space charge distorts the response; transitional.</li><li><strong>Geiger-Mueller (GM) region:</strong> Full avalanche; the curves merge and all pulses are the same size regardless of radiation type or energy. Counts only.</li><li><strong>Continuous discharge (beyond the GM region, not shown on the card):</strong> Voltage too high; the gas discharges continuously.</li></ul></div>"
+  }
+]

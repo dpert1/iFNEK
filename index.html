@@ -85,14 +85,48 @@
             color: #c0392b;
         }
 
+        /* Popup content styles (moved here from the individual popup files, scoped to the popup) */
+        #equationPopup {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+            color: #111;
+        }
+        #latexContent .section-tag { font-size: 0.8rem; color: #8b6914; font-weight: bold; text-transform: uppercase; letter-spacing: 0.05em; }
+        #latexContent .card { background: #f5f0e8; padding: 16px; border-radius: 6px; border-left: 4px solid #8b6914; margin-bottom: 12px; }
+        #latexContent .graph-desc { background: #eef4ee; border-left: 4px solid #3a7a3a; padding: 16px; border-radius: 6px; margin-bottom: 12px; }
+        #latexContent table { border-collapse: collapse; width: 100%; margin-top: 8px; }
+        #latexContent th, #latexContent td { border: 1px solid #c8a84b; padding: 8px 12px; text-align: left; }
+        #latexContent th { background: #e8d99a; }
+
+        /* Clickable hotspots drawn in the SVG */
+        #rdcContainer [data-hotspot] {
+            fill: transparent;
+            stroke: none;
+            cursor: pointer;
+        }
+
+        #rdcContainer [data-hotspot]:hover {
+            fill: rgba(255, 215, 0, 0.25);
+        }
+
         .warning {
             color: #e74c3c;
             font-weight: bold;
             text-align: center;
         }
     </style>
-    <!-- MathJax for rendering LaTeX -->
-    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <!-- MathJax for rendering LaTeX. If a popup is opened before MathJax finishes loading, it is typeset on load. -->
+    <script>
+        window.MathJax = {
+            startup: {
+                typeset: false,
+                ready() {
+                    MathJax.startup.defaultReady();
+                    MathJax.startup.promise.then(() => { if (window.typesetPopup) typesetPopup(); });
+                }
+            }
+        };
+    </script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -112,18 +146,22 @@
     </div>
 
     <script>
-        // Load and display LaTeX content from file
-        function loadContent(filename, event, column) {
-            fetch(filename)
-                .then(response => response.text())
-                .then(content => showPopup(content, event, column))
-                .catch(err => console.error('Error loading content:', err));
+        // Popup content, keyed by SVG hotspot id (loaded from content.json)
+        var content = {};
+
+        // Typeset the popup only, once MathJax has loaded
+        function typesetPopup() {
+            if (window.MathJax && MathJax.typesetPromise) {
+                MathJax.typesetPromise([document.getElementById('latexContent')]);
+            }
         }
 
         // Show the popup at an appropriate position
-        function showPopup(content, event, column) {
+        function showPopup(entry, event) {
             var popup = document.getElementById('equationPopup');
-            document.getElementById('latexContent').innerHTML = content;
+            var container = document.getElementById('latexContent');
+            if (window.MathJax && MathJax.typesetClear) MathJax.typesetClear([container]);
+            container.innerHTML = entry.body;
             popup.style.display = 'block';
 
             const viewportWidth = window.innerWidth;
@@ -131,17 +169,23 @@
 
             popup.style.top = (event.pageY + 30) + 'px';
 
-            if (column === "left" || column === "middle") {
+            if (entry.column === "right") {
+                // Right column: position toward center-left
+                popup.style.left = Math.max(20, viewportWidth / 2.5 - 300) + 'px';
+            } else {
+                // Left/middle columns: right of the click if there is room, otherwise left of it
                 const rightSpace = viewportWidth - clickX;
                 popup.style.left = (rightSpace >= 650)
                     ? (clickX + 20) + 'px'
                     : Math.max(20, clickX - 620) + 'px';
-            } else {
-                // Right column: position toward center-left
-                popup.style.left = Math.max(20, viewportWidth / 2.5 - 300) + 'px';
             }
 
-            MathJax.typesetPromise();
+            // Keep the popup fully on screen
+            const rect = popup.getBoundingClientRect();
+            if (rect.right > viewportWidth) popup.style.left = Math.max(20, viewportWidth - rect.width - 20) + 'px';
+            if (rect.left < 0) popup.style.left = '20px';
+
+            typesetPopup();
         }
 
         // Close the popup
@@ -149,110 +193,38 @@
             document.getElementById('equationPopup').style.display = 'none';
         }
 
-        // Set up a clickable SVG area with hover highlight and content load on click
-        function initializeClickableArea(svgElement, areaId, contentUrl, column) {
-            var area = svgElement.getElementById(areaId);
-            console.log('Initializing clickable area:', areaId, area);
-            if (area) {
-                area.style.fill = 'transparent';
-                area.style.stroke = 'none';
-                area.style.cursor = 'pointer';
-                area.addEventListener('click',     function(event) { loadContent(contentUrl, event, column); });
-                area.addEventListener('mouseover', function()      { area.style.fill = 'rgba(255, 215, 0, 0.25)'; });
-                area.addEventListener('mouseout',  function()      { area.style.fill = 'transparent'; area.style.stroke = 'none'; });
-            } else {
-                console.warn('Clickable area ' + areaId + ' not found in SVG.');
-            }
-        }
+        // Close on Esc, or on a click outside the popup that is not on another hotspot
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') closePopup();
+        });
+        document.addEventListener('click', function(event) {
+            if (!event.target.closest('#equationPopup, [data-hotspot]')) closePopup();
+        });
 
-        // Fetch and embed the SVG, then wire up all clickable areas
-        fetch('FNEK.svg')
-            .then(response => response.text())
-            .then(svgText => {
-                document.getElementById('rdcContainer').innerHTML = svgText;
-                const svgElement = document.getElementById('rdcContainer').querySelector('svg');
+        // Fetch the SVG and popup content, embed the SVG, then wire up one delegated click handler
+        Promise.all([
+            fetch('FNEK.svg').then(response => response.text()),
+            fetch('content.json').then(response => response.json())
+        ])
+            .then(([svgText, data]) => {
+                const container = document.getElementById('rdcContainer');
+                container.innerHTML = svgText;
+                const svgElement = container.querySelector('svg');
                 if (!svgElement) { console.error('SVG element not found in container'); return; }
 
-                initializeClickableArea(svgElement,'fnek-1','fnek/fnek_avogadro.html','left');
-		initializeClickableArea(svgElement,'fnek-2','fnek/fnek_electron_rest_mass.html','left');
-		initializeClickableArea(svgElement,'fnek-3','fnek/fnek_speed_of_light.html','left');
-		initializeClickableArea(svgElement,'fnek-4','fnek/fnek_curie_becquerel.html','left');
-		initializeClickableArea(svgElement,'fnek-5','fnek/fnek_becquerel_def.html','left');
-		initializeClickableArea(svgElement,'fnek-6','fnek/fnek_barn_def.html','left');
-		initializeClickableArea(svgElement,'fnek-7','fnek/fnek_gray_def.html','left');
-		initializeClickableArea(svgElement,'fnek-8','fnek/fnek_sievert_def.html','left');
-		initializeClickableArea(svgElement,'fnek-9','fnek/fnek_amu_def.html','left');
-		initializeClickableArea(svgElement,'fnek-10','fnek/fnek_unit_flux.html','left');
-		initializeClickableArea(svgElement,'fnek-11','fnek/fnek_unit_activity.html','left');
-		initializeClickableArea(svgElement,'fnek-12','fnek/fnek_unit_cross_section.html','left');
-		initializeClickableArea(svgElement,'fnek-13','fnek/fnek_unit_power.html','left');
-		initializeClickableArea(svgElement,'fnek-14','fnek/fnek_unit_absorbed_dose.html','left');
-		initializeClickableArea(svgElement,'fnek-15','fnek/fnek_unit_dose_equivalent.html','left');
-		initializeClickableArea(svgElement,'fnek-16','fnek/fnek_unit_exposure.html','left');
-		initializeClickableArea(svgElement,'fnek-17','fnek/fnek_radioactive_decay.html','left');
-		initializeClickableArea(svgElement,'fnek-18','fnek/fnek_decay_constant.html','left');
-		initializeClickableArea(svgElement,'fnek-19','fnek/fnek_mass_energy_equivalence.html','left');
-		initializeClickableArea(svgElement,'fnek-20','fnek/fnek_q_value.html','left');
-		initializeClickableArea(svgElement,'fnek-21','fnek/fnek_thermal_neutron_energy.html','left');
-		initializeClickableArea(svgElement,'fnek-22','fnek/fnek_recoverable_energy_fission.html','left');
-		initializeClickableArea(svgElement,'fnek-23','fnek/fnek_avg_neutrons_per_fission.html','left');
-		initializeClickableArea(svgElement,'fnek-24','fnek/fnek_fissile_isotopes.html','left');
-		initializeClickableArea(svgElement,'fnek-25','fnek/fnek_fertile_isotopes.html','left');
-		initializeClickableArea(svgElement,'fnek-26','fnek/fnek_natural_uranium_enrichment.html','left');
-		initializeClickableArea(svgElement,'fnek-27','fnek/fnek_multiplication_factor.html','left');
-		initializeClickableArea(svgElement,'fnek-28','fnek/fnek_common_moderators.html','left');
-		initializeClickableArea(svgElement,'fnek-29','fnek/fnek_moderator_properties.html','left');
-		initializeClickableArea(svgElement,'fnek-30','fnek/fnek_us_nuclear_electricity.html','left');
-		initializeClickableArea(svgElement,'fnek-31','fnek/fnek_absorbed_dose_rate.html','right');
-		initializeClickableArea(svgElement,'fnek-32','fnek/fnek_uncollided_flux.html','right');
-		initializeClickableArea(svgElement,'fnek-33','fnek/fnek_charged_particle_ionization.html','right');
-		initializeClickableArea(svgElement,'fnek-34','fnek/fnek_charged_particle_excitation.html','right');
-		initializeClickableArea(svgElement,'fnek-35','fnek/fnek_charged_particle_bremsstrahlung.html','right');
-		initializeClickableArea(svgElement,'fnek-36','fnek/fnek_gamma_photoelectric.html','right');
-		initializeClickableArea(svgElement,'fnek-37','fnek/fnek_gamma_compton.html','right');
-		initializeClickableArea(svgElement,'fnek-38','fnek/fnek_gamma_pair_production.html','right');
-		initializeClickableArea(svgElement,'fnek-39','fnek/fnek_pwr_nominal_conditions.html','right');
-		initializeClickableArea(svgElement,'fnek-40','fnek/fnek_uo2_temp_limit.html','right');
-		initializeClickableArea(svgElement,'fnek-41','fnek/fnek_zircaloy_temp_limit.html','right');
-		initializeClickableArea(svgElement,'fnek-42','fnek/fnek_temp_coefficient.html','right');
-		initializeClickableArea(svgElement,'fnek-43','fnek/fnek_control_rod_worth.html','right');
-		initializeClickableArea(svgElement,'fnek-44','fnek/fnek_fission_product_poisons.html','right');
-		initializeClickableArea(svgElement,'fnek-45','fnek/fnek_delayed_neutron_fraction.html','right');
-		initializeClickableArea(svgElement,'fnek-46','fnek/fnek_stable_period.html','right');
-		initializeClickableArea(svgElement,'fnek-47','fnek/fnek_mcnp_unit_length.html','right');
-		initializeClickableArea(svgElement,'fnek-48','fnek/fnek_mcnp_unit_energy.html','right');
-		initializeClickableArea(svgElement,'fnek-49','fnek/fnek_mcnp_unit_time.html','right');
-		initializeClickableArea(svgElement,'fnek-50','fnek/fnek_mcnp_unit_temperature.html','right');
-		initializeClickableArea(svgElement,'fnek-51','fnek/fnek_mcnp_unit_mass_density.html','right');
-		initializeClickableArea(svgElement,'fnek-52','fnek/fnek_mcnp_unit_cross_section.html','right');
-		initializeClickableArea(svgElement,'fnek-53','fnek/fnek_code_comment_symbols.html','right');
-		initializeClickableArea(svgElement,'fnek-54','fnek/fnek_transport_code_classes.html','right');
-		initializeClickableArea(svgElement,'fnek-55','fnek/fnek_gun_type.html','right');
-		initializeClickableArea(svgElement,'fnek-56','fnek/fnek_implosion_type.html','right');
-		initializeClickableArea(svgElement,'fnek-57','fnek/fnek_ssnm.html','right');
-		initializeClickableArea(svgElement,'fnek-58','fnek/fnek_weapons_effect_blast.html','right');
-		initializeClickableArea(svgElement,'fnek-59','fnek/fnek_weapons_effect_thermal.html','right');
-		initializeClickableArea(svgElement,'fnek-60','fnek/fnek_weapons_effect_nuclear_radiation.html','right');
-		initializeClickableArea(svgElement,'fnek-61','fnek/fnek_weapons_effect_emp.html','right');
-		initializeClickableArea(svgElement,'fnek-62','fnek/fnek_fallout_decay.html','right');
-		initializeClickableArea(svgElement,'fnek-63','fnek/fnek_detector_types.html','left');
-		initializeClickableArea(svgElement,'fnek-64','fnek/fnek_gamma_shielding_properties.html','left');
-		initializeClickableArea(svgElement,'fnek-65','fnek/fnek_neutron_shielding_properties.html','left');
-		initializeClickableArea(svgElement,'fnek-66','fnek/fnek_neutron_shielding_principle.html','left');
-		initializeClickableArea(svgElement,'fnek-67','fnek/fnek_background_dose.html','right');
-		initializeClickableArea(svgElement,'fnek-68','fnek/fnek_alpha_range.html','right');
-		initializeClickableArea(svgElement,'fnek-69','fnek/fnek_beta_range.html','right');
-		initializeClickableArea(svgElement,'fnek-70','fnek/fnek_occupational_dose_limit.html','right');
-		initializeClickableArea(svgElement,'fnek-71','fnek/fnek_radiation_protection_principle.html','right');
-		initializeClickableArea(svgElement,'fnek-72','fnek/fnek_graph_binding_energy.html','left');
-		initializeClickableArea(svgElement,'fnek-73','fnek/fnek_graph_fission_yield.html','center');
-		initializeClickableArea(svgElement,'fnek-74','fnek/fnek_graph_chart_of_nuclides.html','right');
-		initializeClickableArea(svgElement,'fnek-75','fnek/fnek_graph_fission_xs.html','left');
-		initializeClickableArea(svgElement,'fnek-76','fnek/fnek_graph_photon_interactions.html','center');
-		initializeClickableArea(svgElement,'fnek-77','fnek/fnek_graph_detector_regions.html','right');
-            })
-            .catch(err => console.error('Error loading SVG:', err));
+                data.forEach(entry => {
+                    content[entry.id] = entry;
+                    const area = svgElement.getElementById(entry.id);
+                    if (area) area.setAttribute('data-hotspot', '');
+                    else console.warn('Clickable area ' + entry.id + ' not found in SVG.');
+                });
 
+                svgElement.addEventListener('click', function(event) {
+                    const area = event.target.closest('[data-hotspot]');
+                    if (area) showPopup(content[area.id], event);
+                });
+            })
+            .catch(err => console.error('Error loading card:', err));
     </script>
     <h3 class="warning">YOU WILL NOT HAVE THIS VERSION OF THE FNEK ON ANY EXAM</h3>
 </body>
