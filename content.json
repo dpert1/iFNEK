@@ -47,7 +47,7 @@
   {
     "id": "fnek-10",
     "column": "left",
-    "body": "<p class=\"section-tag\">SI Units</p>\n<h1>Unit: Flux</h1>\n<div class=\"card\"><p><strong>Quantity:</strong> Flux</p><p><strong>Unit:</strong> #/cm²-s</p><p>Neutron or photon flux is the number of particles passing through a unit area per unit time. Not an SI base unit but standard in nuclear engineering.</p></div>"
+    "body": "<p class=\"section-tag\">SI Units</p>\n<h1>Unit: Flux</h1>\n<div class=\"card\"><p><strong>Quantity:</strong> Flux</p><p><strong>Unit:</strong> #/cm²-s</p><p>Flux is the particle density times speed (\\(\\phi = nv\\)): the total distance traveled by all particles per unit volume per unit time. It equals the number of particles crossing a small sphere of unit cross-sectional area per unit time, from all directions; it is not a flow through a flat surface. Not an SI base unit but standard in nuclear engineering.</p></div>"
   },
   {
     "id": "fnek-11",
@@ -72,7 +72,7 @@
   {
     "id": "fnek-15",
     "column": "left",
-    "body": "<p class=\"section-tag\">SI Units</p>\n<h1>Unit: Dose Equivalent</h1>\n<div class=\"card\"><p><strong>Quantity:</strong> Dose Equivalent</p><p><strong>SI Unit:</strong> Sievert (Sv)</p><p>Absorbed dose weighted by radiation type to reflect biological risk. \\(1 \\ \\text{Sv} = 100 \\ \\text{rem}\\).</p></div>"
+    "body": "<p class=\"section-tag\">SI Units</p>\n<h1>Unit: Dose Equivalent</h1>\n<div class=\"card\"><p><strong>Quantity:</strong> Dose Equivalent</p><p><strong>SI Unit:</strong> Sievert (Sv)</p><p>Absorbed dose weighted by radiation type to reflect biological risk. \\(1 \\ \\text{Sv} = 100 \\ \\text{rem}\\).</p><p>U.S. NRC regulations call this dose equivalent (absorbed dose times a quality factor Q); ICRP calls the corresponding quantity equivalent dose (absorbed dose times a radiation weighting factor \\(w_R\\)). Both are in sieverts.</p></div>"
   },
   {
     "id": "fnek-16",
@@ -102,7 +102,7 @@
   {
     "id": "fnek-21",
     "column": "left",
-    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Thermal Neutron Energy</h1>\n<div class=\"card\"><p>\\[E_{th} = 0.0253 \\ \\text{eV} \\quad (T = 20^\\circ\\text{C})\\]</p><p>The most probable energy of a neutron in thermal equilibrium with its surroundings at room temperature. Corresponds to a neutron speed of ~2200 m/s. Cross sections are often tabulated at this energy.</p></div>"
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Thermal Neutron Energy</h1>\n<div class=\"card\"><p>\\[E_{th} = 0.0253 \\ \\text{eV} \\quad (T = 20^\\circ\\text{C})\\]</p><p>The energy \\(kT\\) at room temperature (20°C, 293.6 K). It is the kinetic energy of a neutron moving at the most probable speed of a thermal (Maxwellian) neutron population, ~2200 m/s. Cross sections are often tabulated at this energy.</p></div>"
   },
   {
     "id": "fnek-22",
@@ -147,7 +147,7 @@
   {
     "id": "fnek-30",
     "column": "left",
-    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>U.S. Electricity from Nuclear Power</h1>\n<div class=\"card\"><p><strong>~19% (2018, Source: EIA)</strong></p><p>Nuclear power is the largest source of carbon-free electricity in the United States. The U.S. operates the largest fleet of nuclear reactors in the world (~93 operating reactors as of 2018).</p></div>"
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>U.S. Electricity from Nuclear Power</h1>\n<div class=\"card\"><p><strong>~19% (2018, Source: EIA)</strong></p><p>Nuclear power is the largest source of carbon-free electricity in the United States. The U.S. operates the largest fleet of nuclear reactors in the world (98 operating reactors at the end of 2018). Nuclear has supplied about 18-19% of U.S. electricity every year since; the card's figure is from 2018.</p></div>"
   },
   {
     "id": "fnek-31",
@@ -157,12 +157,12 @@
   {
     "id": "fnek-32",
     "column": "right",
-    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>Uncollided Gamma Flux from a Point Source</h1>\n<div class=\"card\"><p>\\[\\phi = \\frac{S \\, e^{-\\mu r}}{4\\pi r^2}\\]</p><ul><li>\\(\\phi\\): uncollided flux [#/cm²-s]</li><li>\\(S\\): source strength [#/s]</li><li>\\(\\mu\\): linear attenuation coefficient [cm⁻¹]</li><li>\\(r\\): distance from source [cm]</li></ul><p>Combines inverse-square geometric spreading with exponential attenuation through material.</p></div>"
+    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>Uncollided Gamma Flux from a Point Source</h1>\n<div class=\"card\"><p>\\[\\phi = \\frac{S \\, e^{-\\mu r}}{4\\pi r^2}\\]</p><ul><li>\\(\\phi\\): uncollided flux [#/cm²-s]</li><li>\\(S\\): source strength [#/s]</li><li>\\(\\mu\\): linear attenuation coefficient [cm⁻¹]</li><li>\\(r\\): distance from source [cm]</li></ul><p>Combines inverse-square geometric spreading with exponential attenuation through material.</p><p>The card writes the exponent as \\(e^{-\\mu R}\\); R and r are the same distance.</p></div>"
   },
   {
     "id": "fnek-33",
     "column": "right",
-    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>Charged Particle Interaction: Ionization</h1>\n<div class=\"card\"><p><strong>Ionization</strong> is the primary energy-loss mechanism for heavy charged particles (alphas, protons) and electrons in matter.</p><p>The incident particle transfers energy to bound atomic electrons, ejecting them from their atoms and creating ion pairs. Energy loss per unit path length is described by the Bethe-Bloch formula. Most of a charged particle's dose is deposited near the end of its range (Bragg peak).</p></div>"
+    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>Charged Particle Interaction: Ionization</h1>\n<div class=\"card\"><p><strong>Ionization</strong> is the primary energy-loss mechanism for heavy charged particles (alphas, protons) and electrons in matter.</p><p>The incident particle transfers energy to bound atomic electrons, ejecting them from their atoms and creating ion pairs. Energy loss per unit path length is described by the Bethe-Bloch formula. For heavy charged particles (alphas, protons), the energy lost per unit path length rises sharply near the end of the range (the Bragg peak).</p></div>"
   },
   {
     "id": "fnek-34",
@@ -202,7 +202,7 @@
   {
     "id": "fnek-41",
     "column": "right",
-    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Design Limit: Zircaloy Maximum Temperature</h1>\n<div class=\"card\"><p><strong>Maximum temperature limit for zircaloy cladding: 2200°F (~1204°C)</strong></p><p>Above this temperature, zircaloy reacts exothermically with steam: Zr + 2H₂O → ZrO₂ + 2H₂. This generates hydrogen gas (explosion risk) and additional heat, making 2200°F the key safety limit for loss-of-coolant accident (LOCA) analysis.</p></div>"
+    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Design Limit: Zircaloy Maximum Temperature</h1>\n<div class=\"card\"><p><strong>Maximum temperature limit for zircaloy cladding: 2200°F (~1204°C)</strong></p><p>Zircaloy reacts exothermically with steam: Zr + 2H₂O → ZrO₂ + 2H₂. The reaction occurs at lower temperatures too, but becomes rapid above about this temperature, generating hydrogen gas (explosion risk) and additional heat. 10 CFR 50.46 sets 2200°F as the peak cladding temperature limit for loss-of-coolant accident (LOCA) analysis, together with a 17% maximum cladding oxidation limit, mainly to keep the cladding from becoming brittle.</p></div>"
   },
   {
     "id": "fnek-42",
@@ -287,17 +287,17 @@
   {
     "id": "fnek-58",
     "column": "right",
-    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Weapons Effect: Blast</h1>\n<div class=\"card\"><p><strong>Blast</strong> accounts for approximately 50% of a nuclear weapon's total energy.</p><p>The rapid energy release creates a high-pressure shock wave that propagates outward at supersonic speed. Damage is caused by overpressure (crushing structures) and dynamic pressure (high-velocity winds). Effects scale with the cube root of yield — a weapon 8× larger has twice the blast radius. Primary cause of structural damage and casualties at moderate to large ranges.</p></div>"
+    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Weapons Effect: Blast</h1>\n<div class=\"card\"><p><strong>Blast</strong> accounts for approximately 50% of a nuclear weapon's total energy.</p><p>The rapid energy release creates a high-pressure shock wave that propagates outward at supersonic speed. Damage is caused by overpressure (crushing structures) and dynamic pressure (high-velocity winds). Effects scale with the cube root of yield — a weapon 8× larger has twice the blast radius. Primary cause of structural damage and casualties at moderate to large ranges.</p><p>The 50 / 35 / 15% split is typical of a fission weapon burst in the lower atmosphere (below about 100,000 ft); it is different for high-altitude bursts and for thermonuclear weapons.</p></div>"
   },
   {
     "id": "fnek-59",
     "column": "right",
-    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Weapons Effect: Thermal Radiation</h1>\n<div class=\"card\"><p><strong>Thermal radiation</strong> accounts for approximately 35% of a nuclear weapon's total energy.</p><p>The fireball radiates intense heat and light across a wide area. Effects include flash blindness, skin burns (first, second, third degree), and ignition of flammable materials. Thermal fluence [cal/cm²] determines burn severity. Thermal effects have a larger range than blast for multi-megaton weapons and can cause mass fires (firestorm) in urban areas.</p></div>"
+    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Weapons Effect: Thermal Radiation</h1>\n<div class=\"card\"><p><strong>Thermal radiation</strong> accounts for approximately 35% of a nuclear weapon's total energy.</p><p>The fireball radiates intense heat and light across a wide area. Effects include flash blindness, skin burns (first, second, third degree), and ignition of flammable materials. Thermal fluence [cal/cm²] determines burn severity. Thermal effects have a larger range than blast for multi-megaton weapons and can cause mass fires (firestorm) in urban areas.</p><p>The 50 / 35 / 15% split is typical of a fission weapon burst in the lower atmosphere (below about 100,000 ft); it is different for high-altitude bursts and for thermonuclear weapons.</p></div>"
   },
   {
     "id": "fnek-60",
     "column": "right",
-    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Weapons Effect: Nuclear Radiation</h1>\n<div class=\"card\"><p><strong>Nuclear radiation</strong> (initial and residual) accounts for approximately 15% of a nuclear weapon's total energy.</p><ul><li><strong>Initial (prompt) radiation:</strong> Neutrons and gamma rays emitted within the first minute. Range limited by atmospheric attenuation; significant within ~1–2 km for kiloton weapons.</li><li><strong>Residual radiation (fallout):</strong> Radioactive fission products deposited downwind. Dose rate decays approximately as \\(R = R_1 t^{-1.2}\\). Primary hazard for large areas downwind over hours to days.</li></ul></div>"
+    "body": "<p class=\"section-tag\">NE 450 — Nuclear Weapons Effects</p>\n<h1>Weapons Effect: Nuclear Radiation</h1>\n<div class=\"card\"><p><strong>Nuclear radiation</strong> (initial and residual) accounts for approximately 15% of a nuclear weapon's total energy.</p><ul><li><strong>Initial (prompt) radiation:</strong> Neutrons and gamma rays emitted within the first minute. Range limited by atmospheric attenuation; significant within ~1–2 km for kiloton weapons.</li><li><strong>Residual radiation (fallout):</strong> Radioactive fission products deposited downwind. Dose rate decays approximately as \\(R = R_1 t^{-1.2}\\). Primary hazard for large areas downwind over hours to days.</li></ul><p>The 50 / 35 / 15% split is typical of a fission weapon burst in the lower atmosphere (below about 100,000 ft); it is different for high-altitude bursts and for thermonuclear weapons.</p></div>"
   },
   {
     "id": "fnek-61",
@@ -347,7 +347,7 @@
   {
     "id": "fnek-70",
     "column": "right",
-    "body": "<p class=\"section-tag\">NE 474 — Radiological Safety</p>\n<h1>Annual Occupational Dose Limits</h1>\n<div class=\"card\"><p>The annual limit for occupational radiation exposure to an adult is the <strong>more limiting</strong> of:</p><ul><li><strong>0.05 Sv (5 rem)</strong> effective dose to the whole body</li><li><strong>0.5 Sv (50 rem)</strong> to any individual organ (except eyes)</li><li><strong>0.15 Sv (15 rem)</strong> to the lens of the eye</li></ul><p>These limits apply to planned, controlled occupational exposures. Emergency dose limits are separate and higher. Members of the public are limited to 0.001 Sv (0.1 rem) per year from licensed facilities.</p></div>"
+    "body": "<p class=\"section-tag\">NE 474 — Radiological Safety</p>\n<h1>Annual Occupational Dose Limits</h1>\n<div class=\"card\"><p>The annual limit for occupational radiation exposure to an adult is the <strong>more limiting</strong> of:</p><ul><li><strong>0.05 Sv (5 rem)</strong> effective dose to the whole body</li><li><strong>0.5 Sv (50 rem)</strong> to any individual organ (except eyes)</li><li><strong>0.15 Sv (15 rem)</strong> to the lens of the eye</li><li><strong>0.5 Sv (50 rem)</strong> shallow dose to the skin or to any extremity</li></ul><p>These limits apply to planned, controlled occupational exposures. Emergency dose limits are separate and higher. Members of the public are limited to 0.001 Sv (0.1 rem) per year from licensed facilities. (Source: 10 CFR 20.1201 and 20.1301. The card lists the first three limits.)</p></div>"
   },
   {
     "id": "fnek-71",
