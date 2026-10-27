@@ -3,88 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>iFNEK: Interactive Fundamental Nuclear Engineering Knowledge</title>
+    <link rel="stylesheet" href="irdc.css">
     <style>
-        /* Page styling */
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            max-width: 100%;
-            margin: 0;
-            padding: 20px;
-        }
-
-        /* Container styling */
-        #rdcContainer {
-            display: flex;
-            justify-content: center;
-            max-width: 100%;
-            overflow-x: auto;
-        }
-
-        /* Popup styling */
-        #equationPopup {
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            padding: 20px;
-            z-index: 1000;
-            min-width: 300px;
-            max-width: 600px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-
-        #latexContent {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-
-        #latexContent .equation {
-            padding: 15px;
-            margin: 10px 0;
-            background-color: #f8f9fa;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-
-        #latexContent h1 {
-            font-size: 1.2em;
-            margin: 0 0 15px 0;
-        }
-
-        #latexContent h2 {
-            font-size: 1.1em;
-            margin: 15px 0 8px 0;
-        }
-
-        #latexContent ul {
-            margin: 8px 0;
-            padding-left: 25px;
-        }
-
-        #latexContent li {
-            margin: 4px 0;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            cursor: pointer;
-            font-size: 14px;
-            color: #e74c3c;
-            transition: color 0.3s ease;
-            padding: 5px;
-        }
-
-        .close-btn:hover {
-            color: #c0392b;
-        }
-
         /* Popup content styles (moved here from the individual popup files, scoped to the popup) */
         #equationPopup {
             font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
@@ -96,36 +18,11 @@
         #latexContent table { border-collapse: collapse; width: 100%; margin-top: 8px; }
         #latexContent th, #latexContent td { border: 1px solid #c8a84b; padding: 8px 12px; text-align: left; }
         #latexContent th { background: #e8d99a; }
-
-        /* Clickable hotspots drawn in the SVG */
-        #rdcContainer [data-hotspot] {
-            fill: transparent;
-            stroke: none;
-            cursor: pointer;
-        }
-
-        #rdcContainer [data-hotspot]:hover {
-            fill: rgba(255, 215, 0, 0.25);
-        }
-
-        .warning {
-            color: #e74c3c;
-            font-weight: bold;
-            text-align: center;
-        }
     </style>
-    <!-- MathJax for rendering LaTeX. If a popup is opened before MathJax finishes loading, it is typeset on load. -->
-    <script>
-        window.MathJax = {
-            startup: {
-                typeset: false,
-                ready() {
-                    MathJax.startup.defaultReady();
-                    MathJax.startup.promise.then(() => { if (window.typesetPopup) typesetPopup(); });
-                }
-            }
-        };
-    </script>
+    <!-- Card settings for irdc.js, the shared popup engine -->
+    <script>window.IRDC = { svg: 'FNEK.svg', data: 'content.json' };</script>
+    <script src="irdc.js"></script>
+    <!-- MathJax for rendering LaTeX (configured by irdc.js) -->
     <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
 </head>
 
@@ -141,91 +38,9 @@
     </p>
     <!-- Popup for displaying LaTeX equations -->
     <div id="equationPopup">
-        <span class="close-btn" onclick="closePopup()">Close X</span>
+        <button type="button" class="close-btn">Close X</button>
         <div id="latexContent"></div>
     </div>
-
-    <script>
-        // Popup content, keyed by SVG hotspot id (loaded from content.json)
-        var content = {};
-
-        // Typeset the popup only, once MathJax has loaded
-        function typesetPopup() {
-            if (window.MathJax && MathJax.typesetPromise) {
-                MathJax.typesetPromise([document.getElementById('latexContent')]);
-            }
-        }
-
-        // Show the popup at an appropriate position
-        function showPopup(entry, event) {
-            var popup = document.getElementById('equationPopup');
-            var container = document.getElementById('latexContent');
-            if (window.MathJax && MathJax.typesetClear) MathJax.typesetClear([container]);
-            container.innerHTML = entry.body;
-            popup.style.display = 'block';
-
-            const viewportWidth = window.innerWidth;
-            const clickX = event.pageX;
-
-            popup.style.top = (event.pageY + 30) + 'px';
-
-            if (entry.column === "right") {
-                // Right column: position toward center-left
-                popup.style.left = Math.max(20, viewportWidth / 2.5 - 300) + 'px';
-            } else {
-                // Left/middle columns: right of the click if there is room, otherwise left of it
-                const rightSpace = viewportWidth - clickX;
-                popup.style.left = (rightSpace >= 650)
-                    ? (clickX + 20) + 'px'
-                    : Math.max(20, clickX - 620) + 'px';
-            }
-
-            // Keep the popup fully on screen
-            const rect = popup.getBoundingClientRect();
-            if (rect.right > viewportWidth) popup.style.left = Math.max(20, viewportWidth - rect.width - 20) + 'px';
-            if (rect.left < 0) popup.style.left = '20px';
-
-            typesetPopup();
-        }
-
-        // Close the popup
-        function closePopup() {
-            document.getElementById('equationPopup').style.display = 'none';
-        }
-
-        // Close on Esc, or on a click outside the popup that is not on another hotspot
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') closePopup();
-        });
-        document.addEventListener('click', function(event) {
-            if (!event.target.closest('#equationPopup, [data-hotspot]')) closePopup();
-        });
-
-        // Fetch the SVG and popup content, embed the SVG, then wire up one delegated click handler
-        Promise.all([
-            fetch('FNEK.svg').then(response => response.text()),
-            fetch('content.json').then(response => response.json())
-        ])
-            .then(([svgText, data]) => {
-                const container = document.getElementById('rdcContainer');
-                container.innerHTML = svgText;
-                const svgElement = container.querySelector('svg');
-                if (!svgElement) { console.error('SVG element not found in container'); return; }
-
-                data.forEach(entry => {
-                    content[entry.id] = entry;
-                    const area = svgElement.getElementById(entry.id);
-                    if (area) area.setAttribute('data-hotspot', '');
-                    else console.warn('Clickable area ' + entry.id + ' not found in SVG.');
-                });
-
-                svgElement.addEventListener('click', function(event) {
-                    const area = event.target.closest('[data-hotspot]');
-                    if (area) showPopup(content[area.id], event);
-                });
-            })
-            .catch(err => console.error('Error loading card:', err));
-    </script>
     <h3 class="warning">YOU WILL NOT HAVE THIS VERSION OF THE FNEK ON ANY EXAM</h3>
 </body>
 
