@@ -2,12 +2,12 @@
   {
     "id": "fnek-1",
     "column": "left",
-    "body": "<p class=\"section-tag\">Physical Constants</p>\n<h1>Avogadro's Number</h1>\n<div class=\"card\"><p>\\(N_A = 6.02214199 \\times 10^{23} \\ \\text{mol}^{-1}\\)</p><p>The number of constituent particles (atoms, molecules) in one mole of a substance.</p></div>"
+    "body": "<p class=\"section-tag\">Physical Constants</p>\n<h1>Avogadro's Number</h1>\n<div class=\"card\"><p>\\(N_A = 6.02214076 \\times 10^{23} \\ \\text{mol}^{-1}\\)</p><p>The number of constituent particles (atoms, molecules) in one mole of a substance.</p><p>This value is exact by definition (SI, 2019). The printed card shows the older value \\(6.02214199 \\times 10^{23}\\); the difference only appears in the 7th digit.</p></div>"
   },
   {
     "id": "fnek-2",
     "column": "left",
-    "body": "<p class=\"section-tag\">Physical Constants</p>\n<h1>Electron Rest Mass</h1>\n<div class=\"card\"><p>\\(m_e = 0.511 \\ \\text{MeV}/c^2\\)</p><p>The rest mass energy of an electron. Relevant to pair production (requires E &gt; 2m_e c^2 = 1.022 MeV) and beta decay energetics.</p></div>"
+    "body": "<p class=\"section-tag\">Physical Constants</p>\n<h1>Electron Rest Mass</h1>\n<div class=\"card\"><p>\\(m_e = 0.511 \\ \\text{MeV}/c^2\\)</p><p>The rest mass energy of an electron. Relevant to pair production (requires \\(E_\\gamma &gt; 2m_ec^2 = 1.022\\) MeV) and beta decay energetics.</p></div>"
   },
   {
     "id": "fnek-3",
@@ -42,7 +42,7 @@
   {
     "id": "fnek-9",
     "column": "left",
-    "body": "<p class=\"section-tag\">Unit Conversions</p>\n<h1>Atomic Mass Unit</h1>\n<div class=\"card\"><p>\\(1 \\ \\text{amu} = 931.494013 \\ \\text{MeV}/c^2\\)</p><p>The atomic mass unit is defined as 1/12 the mass of a carbon-12 atom. Used to express nuclear and atomic masses; converts to energy via mass-energy equivalence.</p></div>"
+    "body": "<p class=\"section-tag\">Unit Conversions</p>\n<h1>Atomic Mass Unit</h1>\n<div class=\"card\"><p>\\(1 \\ \\text{amu} = 931.494 \\ \\text{MeV}/c^2\\)</p><p>The atomic mass unit is defined as 1/12 the mass of a carbon-12 atom. Used to express nuclear and atomic masses; converts to energy via mass-energy equivalence.</p><p>The current value is 931.49410242 MeV (CODATA 2018). The printed card shows the older 931.494013; both round to 931.494 MeV.</p></div>"
   },
   {
     "id": "fnek-10",
@@ -122,7 +122,7 @@
   {
     "id": "fnek-25",
     "column": "left",
-    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Common Fertile Isotopes</h1>\n<div class=\"card\"><ul><li><strong>U-238:</strong> Captures a neutron to become U-239, which beta-decays to Np-239, then to Pu-239 (fissile).</li><li><strong>Th-232:</strong> Captures a neutron to become Th-233, which beta-decays to Pa-233, then to U-233 (fissile).</li></ul><p>Fertile nuclides cannot sustain fission themselves but breed fissile material via neutron capture.</p></div>"
+    "body": "<p class=\"section-tag\">NE 300 — Fundamentals of Nuclear Engineering</p>\n<h1>Common Fertile Isotopes</h1>\n<div class=\"card\"><ul><li><strong>U-238:</strong> Captures a neutron to become U-239, which beta-decays to Np-239, then to Pu-239 (fissile).</li><li><strong>Th-232:</strong> Captures a neutron to become Th-233, which beta-decays to Pa-233, then to U-233 (fissile).</li></ul><p>Fertile nuclides do not fission with thermal neutrons (they fission only with fast neutrons and cannot sustain a chain reaction on their own), but they breed fissile material via neutron capture.</p></div>"
   },
   {
     "id": "fnek-26",
@@ -152,7 +152,7 @@
   {
     "id": "fnek-31",
     "column": "right",
-    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>External Gamma-Ray Absorbed Dose Rate</h1>\n<div class=\"card\"><p>\\[\\dot{D} = \\phi E_\\gamma \\left(\\frac{\\mu_{en}}{\\rho}\\right)\\]</p><ul><li>\\(\\dot{D}\\): absorbed dose rate [Gy/s]</li><li>\\(\\phi\\): photon flux [#/cm²-s]</li><li>\\(E_\\gamma\\): photon energy [MeV]</li><li>\\(\\mu_{en}/\\rho\\): mass energy-absorption coefficient [cm²/g]</li></ul></div>"
+    "body": "<p class=\"section-tag\">NE 350 — Radiological Engineering Design</p>\n<h1>External Gamma-Ray Absorbed Dose Rate</h1>\n<div class=\"card\"><p>\\[\\dot{D} = \\phi E_\\gamma \\left(\\frac{\\mu_{en}}{\\rho}\\right)\\]</p><ul><li>\\(\\dot{D}\\): absorbed dose rate [Gy/s]</li><li>\\(\\phi\\): photon flux [#/cm²-s]</li><li>\\(E_\\gamma\\): photon energy [MeV]</li><li>\\(\\mu_{en}/\\rho\\): mass energy-absorption coefficient [cm²/g]</li></ul><p>With \\(\\phi\\) in #/cm²-s, \\(E_\\gamma\\) in MeV and \\(\\mu_{en}/\\rho\\) in cm²/g, the product is in MeV/(g·s). To get Gy/s, multiply by \\(1.602 \\times 10^{-10}\\) Gy·g/MeV (1 MeV = \\(1.602 \\times 10^{-13}\\) J and 1 g = \\(10^{-3}\\) kg).</p></div>"
   },
   {
     "id": "fnek-32",
@@ -192,7 +192,7 @@
   {
     "id": "fnek-39",
     "column": "right",
-    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Nominal PWR Moderator Conditions</h1>\n<div class=\"card\"><ul><li><strong>Pressure:</strong> 2000 psi (~155 bar)</li><li><strong>Temperature:</strong> 600°F (~315°C)</li></ul><p>High pressure keeps the primary coolant liquid above its normal boiling point. These conditions define the nominal operating state of a pressurized water reactor primary loop.</p></div>"
+    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Nominal PWR Moderator Conditions</h1>\n<div class=\"card\"><ul><li><strong>Pressure:</strong> ~2250 psia (~155 bar)</li><li><strong>Temperature:</strong> 600°F (~315°C)</li></ul><p>High pressure keeps the primary coolant liquid above its normal boiling point. These conditions define the nominal operating state of a pressurized water reactor primary loop.</p><p>The printed card lists 2000 psi; the typical nominal primary pressure is about 2250 psia (155 bar).</p></div>"
   },
   {
     "id": "fnek-40",
@@ -227,7 +227,7 @@
   {
     "id": "fnek-46",
     "column": "right",
-    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Reactor Stable Period After Large Negative Reactivity</h1>\n<div class=\"card\"><p><strong>Stable period after insertion of large negative reactivity: \\(T \\approx 85 \\ \\text{s}\\)</strong></p><p>After a large negative reactivity insertion (e.g., scram), the reactor power does not drop instantly. Prompt neutrons die out quickly, but the longest-lived delayed neutron precursor group (half-life ~55 s) governs the asymptotic decay. The reactor power falls with a stable period of approximately 85 seconds.</p></div>"
+    "body": "<p class=\"section-tag\">NE 355 — Nuclear Reactor Engineering</p>\n<h1>Reactor Stable Period After Large Negative Reactivity</h1>\n<div class=\"card\"><p><strong>Stable period after insertion of large negative reactivity: \\(T \\approx -80 \\ \\text{s}\\)</strong></p><p>After a large negative reactivity insertion (e.g., scram), the reactor power does not drop instantly. Prompt neutrons die out quickly, but the longest-lived delayed neutron precursor group (half-life ~55 s) governs the asymptotic decay. The reactor power falls with a stable period equal to that group's mean life, \\(55.7/\\ln 2 \\approx 80\\) seconds (negative because power is decreasing).</p><p>The printed card lists \\(T \\approx 85\\) s.</p></div>"
   },
   {
     "id": "fnek-47",
@@ -322,7 +322,7 @@
   {
     "id": "fnek-65",
     "column": "left",
-    "body": "<p class=\"section-tag\">NE 452 — Instrumentation and Shielding</p>\n<h1>Good Neutron Shielding Properties</h1>\n<div class=\"card\"><ul><li><strong>Low atomic mass number (Z/A):</strong> Light nuclei (especially hydrogen in water or polyethylene) transfer the most energy per elastic collision, efficiently moderating fast neutrons to thermal energies.</li><li><strong>High neutron absorption cross section:</strong> Once thermalized, neutrons must be absorbed. Materials like boron (B-10, σ_a ~ 3840 b) and cadmium are common thermal neutron absorbers incorporated into shields.</li></ul></div>"
+    "body": "<p class=\"section-tag\">NE 452 — Instrumentation and Shielding</p>\n<h1>Good Neutron Shielding Properties</h1>\n<div class=\"card\"><ul><li><strong>Low atomic mass number (A):</strong> Light nuclei (especially hydrogen in water or polyethylene) transfer the most energy per elastic collision, efficiently moderating fast neutrons to thermal energies.</li><li><strong>High neutron absorption cross section:</strong> Once thermalized, neutrons must be absorbed. Materials like boron (B-10, σ_a ~ 3840 b) and cadmium are common thermal neutron absorbers incorporated into shields.</li></ul></div>"
   },
   {
     "id": "fnek-66",
@@ -332,7 +332,7 @@
   {
     "id": "fnek-67",
     "column": "right",
-    "body": "<p class=\"section-tag\">NE 474 — Radiological Safety</p>\n<h1>Average Background Radiation Dose</h1>\n<div class=\"card\"><p><strong>~1 mrem/day (~360 mrem/year)</strong></p><p>The U.S. average annual background dose is approximately 620 mrem/year when including medical exposures (~310 mrem/year from natural background alone). Sources include cosmic radiation, terrestrial radionuclides (radon, soil), internal radionuclides (K-40, C-14), and medical/occupational exposures.</p></div>"
+    "body": "<p class=\"section-tag\">NE 474 — Radiological Safety</p>\n<h1>Average Background Radiation Dose</h1>\n<div class=\"card\"><p><strong>~1 mrem/day (~360 mrem/year)</strong></p><p>This rule of thumb is roughly the natural background: about 300-360 mrem/year from cosmic radiation, radon and other terrestrial radionuclides, and internal radionuclides (K-40, C-14). Medical exposures roughly double that: the U.S. average total from all sources is about 620 mrem/year (NCRP Report 160).</p></div>"
   },
   {
     "id": "fnek-68",
@@ -372,7 +372,7 @@
   {
     "id": "fnek-75",
     "column": "left",
-    "body": "<p class=\"section-tag\">FNEK Reference Graphs</p>\n<h1>Figure 4: Microscopic Fission Cross Section for U-235</h1>\n<div class=\"card\"><h2>Shape:</h2><p>Log-log plot. Three regions: (1) 1/v region at low energy where σ ∝ 1/E^½, (2) resonance region (1 eV – 1 keV) with sharp peaks, (3) smooth continuum at high energies (&gt;1 keV).</p></div><div class=\"graph-desc\"><h2>Significance:</h2><ul><li>Very high cross section at thermal energies (~580 b at 0.0253 eV) — explains why thermal reactors are efficient.</li><li>The 1/v region means slower neutrons are more likely to cause fission — the basis of moderation.</li><li>Resonance region represents specific nuclear energy levels; neutrons at these energies are strongly absorbed (resonance escape probability p addresses this).</li><li>Cross section drops significantly at fast energies — fast reactors require higher enrichment to compensate.</li></ul></div>"
+    "body": "<p class=\"section-tag\">FNEK Reference Graphs</p>\n<h1>Figure 4: Microscopic Fission Cross Section for U-235</h1>\n<div class=\"card\"><h2>Shape:</h2><p>Log-log plot. Three regions: (1) 1/v region at low energy where σ ∝ 1/E^½, (2) resonance region (1 eV – 1 keV) with sharp peaks, (3) smooth continuum at high energies (&gt;1 keV).</p></div><div class=\"graph-desc\"><h2>Significance:</h2><ul><li>Very high cross section at thermal energies (~580 b at 0.0253 eV) — explains why thermal reactors are efficient.</li><li>The 1/v region means slower neutrons are more likely to cause fission — the basis of moderation.</li><li>Resonance region represents specific energy levels of the compound nucleus, where the cross section spikes. (The resonance escape probability p in the four-factor formula accounts for resonance <em>capture</em> while slowing down, mainly in U-238, not these U-235 fission resonances.)</li><li>Cross section drops significantly at fast energies — fast reactors require higher enrichment to compensate.</li></ul></div>"
   },
   {
     "id": "fnek-76",
@@ -382,6 +382,6 @@
   {
     "id": "fnek-77",
     "column": "right",
-    "body": "<p class=\"section-tag\">FNEK Reference Graphs</p>\n<h1>Figure 6: Operating Regions of Ionizing Detectors</h1>\n<div class=\"card\"><h2>Shape:</h2><p>Log-linear plot of pulse amplitude vs. applied voltage. Six named regions with two curves (alpha and beta) that converge and plateau.</p></div><div class=\"graph-desc\"><h2>Significance:</h2><ul><li><strong>Recombination region:</strong> Voltage too low; ions recombine before collection — not useful for detection.</li><li><strong>Ionization chamber region:</strong> All primary ions collected; pulse proportional to energy deposited. Alpha and beta pulses differ in size (distinguishable).</li><li><strong>Proportional region:</strong> Gas multiplication amplifies signal proportionally; can still distinguish radiation types by pulse height.</li><li><strong>Limited proportionality:</strong> Space charge distorts response; transitional.</li><li><strong>Geiger-Mueller (GM) region:</strong> Full avalanche; all pulses same size regardless of radiation type or energy. Counts only — cannot distinguish.</li><li><strong>Continuous discharge:</strong> Too high voltage; detector damaged.</li></ul></div>"
+    "body": "<p class=\"section-tag\">FNEK Reference Graphs</p>\n<h1>Figure 6: Operating Regions of Ionizing Detectors</h1>\n<div class=\"card\"><h2>Shape:</h2><p>Pulse amplitude (log scale) vs. applied voltage for a gas-filled detector. Two curves show events depositing 1 MeV and 2 MeV in the gas. Labelled regions: ion saturation, proportional, limited proportionality, and Geiger-Mueller. The curves converge in the Geiger-Mueller region.</p></div><div class=\"graph-desc\"><h2>Significance:</h2><ul><li><strong>Recombination (lowest voltages, unlabelled start of the curves):</strong> Ions recombine before collection; pulse grows with voltage. Not useful for detection.</li><li><strong>Ion saturation (ionization chamber) region:</strong> All primary ions collected; pulse proportional to energy deposited, so the 2 MeV curve sits above the 1 MeV curve. This is how radiations that deposit different energies (e.g., alphas vs. betas) are distinguished.</li><li><strong>Proportional region:</strong> Gas multiplication amplifies the signal while keeping it proportional to the initial ionization; radiation types can still be distinguished by pulse height.</li><li><strong>Limited proportionality:</strong> Space charge distorts the response; transitional.</li><li><strong>Geiger-Mueller (GM) region:</strong> Full avalanche; the curves merge and all pulses are the same size regardless of radiation type or energy. Counts only.</li><li><strong>Continuous discharge (beyond the GM region, not shown on the card):</strong> Voltage too high; the gas discharges continuously.</li></ul></div>"
   }
 ]
